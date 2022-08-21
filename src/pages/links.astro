@@ -28,17 +28,17 @@ function getFilteredLinks() {
 					<div class="space-y-4 text-center text-white">
 						<div class="flex justify-center">
 							<img
-								class="object-cover w-24 h-24 border-2 rounded-full border-slate-100"
+								class="object-cover w-20 h-20 md:w-24 md:h-24 border-2 rounded-full border-slate-100"
 								alt="Admir Gorenca avatar"
 								src={avatar}
 							/>
 						</div>
 						<h1
-							class="py-3 text-xl font-semibold lowercase rounded-lg ring-slate-500 ring-1 bg-slate-900/70 lg:text-2xl"
+							class="py-3 mx-6 text-base font-semibold lowercase rounded-lg ring-slate-500 ring-1 bg-slate-900/70 lg:text-2xl"
 						>
 							@admirgorenca
 						</h1>
-						<p class="text-lg font-semibold drop-shadow-2xl">
+						<p class="text-base font-semibold drop-shadow-2xl">
 							Designer & Developer, I love thinking <br />
 							through frontend architecture;
 						</p>
@@ -61,13 +61,15 @@ function getFilteredLinks() {
 							}
 						</div>
 					</div>
-					<div class="w-64 mx-auto mt-5 text-center md:w-96">
+					<div
+						class="w-64 mb-10 md:mb-0 mx-auto mt-5 text-center md:w-96"
+					>
 						<ul class="space-y-2">
 							{
 								getFilteredLinks().map(({ title, url }) => (
 									<li>
 										<a href={url}>
-											<div class="py-4 text-lg font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50 ">
+											<div class=" py-2 md:py-4 text-lg font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50 ">
 												{title}
 											</div>
 										</a>
