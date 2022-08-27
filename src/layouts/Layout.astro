@@ -17,6 +17,16 @@ const { title, description } = Astro.props as Props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<div
+			id="overlay"
+			class="hidden fixed top-0 left-0 w-full h-full bg-black/50"
+		>
+		</div>
 		<slot />
+		<style>
+			#overlay {
+				z-index: 3;
+			}
+		</style>
 	</body>
 </html>

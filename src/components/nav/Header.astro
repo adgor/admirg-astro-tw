@@ -1,0 +1,116 @@
+---
+import { Icon } from "astro-icon";
+// import ThemeSwitcher from "~/components/theme-switcher.astro";
+import { navLinks, socialLinks } from "~/config/links";
+---
+
+<header>
+    <div
+        class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+    >
+        <div class="relative flex items-center justify-between">
+            <div class="flex items-center">
+                <a
+                    href="/"
+                    aria-label="Company"
+                    title="Company"
+                    class="inline-flex items-center lg:mr-8"
+                >
+                    <Icon name="mdi:discord" class="w-10" />
+                </a>
+                <ul class="flex items-center hidden space-x-6 lg:flex">
+                    {
+                        navLinks.map(({ title, url }) => (
+                            <li>
+                                <a
+                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 capitalize hover:text-purple-400"
+                                    href={url}
+                                >
+                                    {title}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <ul class="flex items-center space-x-3 lg:flex">
+                {
+                    socialLinks.map(({ icon, url }) => (
+                        <li>
+                            <a
+                                class="font-medium tracking-wide text-gray-700 transition-colors duration-200 lg:hover:text-purple-400"
+                                href={url}
+                                target="_blank"
+                            >
+                                <Icon name={icon} class=" h-8 lg:h-5" />
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <!-- Mobile menu -->
+            <div class="lg:hidden">
+                <button
+                    id="open-btn"
+                    aria-label="Open Menu"
+                    title="Open Menu"
+                    class="focus:outline-none focus:shadow-outline"
+                >
+                    <Icon name="mdi:menu" class="h-8" />
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="absolute w-1/2 top-0 z-20 right-0 hidden">
+        <div
+            class="px-4 py-5 md:px-24 lg:px-8 h-screen bg-white border text-right"
+        >
+            <button
+                id="close-btn"
+                aria-label="Close Menu"
+                title="Close Menu"
+                class="transition mb-4 duration-200 rounded focus:outline-none focus:shadow-outline"
+            >
+                <Icon name="mdi:close" class="h-10" />
+            </button>
+
+            <nav class="">
+                <ul class="space-y-6 p-3 md:p-5">
+                    {
+                        navLinks.map(({ title, url }) => (
+                            <li class=" border-b">
+                                <a
+                                    class=" text-xl font-medium tracking-wide text-gray-700 transition-colors duration-200 capitalize hover:text-purple-400"
+                                    href={url}
+                                >
+                                    {title}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<script>
+    const btnOpen = document.getElementById("open-btn");
+    const menu = document.getElementById("mobile-menu");
+    const btnClose = document.getElementById("close-btn");
+    const overlay = document.getElementById("overlay");
+
+    btnOpen.addEventListener("click", navToggle);
+    btnClose.addEventListener("click", navToggle);
+
+    function navToggle() {
+        menu.classList.toggle("open");
+        overlay.classList.toggle("hidden");
+        document.body.classList.toggle("overflow-hidden");
+    }
+</script>
+
+<style>
+    .open {
+        display: block;
+    }
+</style>

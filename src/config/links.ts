@@ -1,9 +1,5 @@
 export const navLinks = [
   {
-    "title": "official website",
-    "url": "/"
-  },
-  {
     "title": "portfolio",
     "url": "/portfolio"
   },
@@ -25,7 +21,6 @@ export const navLinks = [
   },
 ]
 
-
   export const socialLinks = [
     {
         "url": "https://instagram.com/admirgorenca",
@@ -41,6 +36,11 @@ export const navLinks = [
         "url": "https://github.com/admirgorenca",
         "description": "Admir Gorenca on GitHub",
         "icon": "mdi:github"
-    }
+    },
+    {
+        "url": "https://discord.gg/93PJFCUP4k",
+        
+        "description": "Admir Gorenca on Discord",
+        "icon": "mdi:discord"
+    },
 ]
-
