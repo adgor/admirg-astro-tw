@@ -25,12 +25,12 @@ const { title, description } = Astro.props as Props;
   </head>
 
   <body
-    class="bg-bkg text-white selection:bg-accent selection:text-bkg overflow-hidden"
+    class="overflow-hidden bg-bkg text-brand selection:bg-brand selection:text-bkg"
   >
     <div id="parallax">
       <div
         id="overlay"
-        class="hidden fixed top-0 left-0 w-full h-full bg-black/50"
+        class="fixed top-0 left-0 hidden w-full h-full bg-black/50"
       >
       </div>
       <slot />

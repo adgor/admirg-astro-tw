@@ -1,15 +1,24 @@
 ---
-import bg from "~/assets/h.jpg";
+import Icon from "astro-icon";
 ---
 
-<header class="relative flex flex-col items-center min-h-screen justify-evenly">
-    <img
-        sizes="(min width: 500px) 480w, 650w, 800w, 1300w"
-        srcset={bg}
-        class="absolute object-cover object-center w-full h-full -z-20"
-        src={bg}
-        aria-hidden="true"
-    />
-    <h1></h1>
-    <a href=""></a>
-</header>
+<section
+    class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+>
+    <header class="relative flex flex-col min-h-screen justify-evenly">
+        <div class="drop-shadow-text-sm lg:drop-shadow-text-lg">
+            <p class="mb-2 text-2xl tracking-wide text-brand">Hi, my name is</p>
+            <h1 class="text-5xl font-bold tracking-wide text-brand">
+                Admir Gorenca<br />
+                <span class="text-5xl"> I build digital things.</span>
+            </h1>
+        </div>
+        <a
+            href="#contact-form"
+            class="flex items-center px-8 py-3 mr-auto space-x-1 font-medium normal-case transition duration-300 ease-out border-2 text-brand border-brand hover:bg-brand/10"
+        >
+            <span class="tracking-wide">Check out my work!</span>
+            <Icon name="mdi:menu-down" class="w-5 h-5" />
+        </a>
+    </header>
+</section>

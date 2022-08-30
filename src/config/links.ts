@@ -32,15 +32,15 @@ export const navLinks = [
         "description": "Admir Gorenca on Twitter",
         "icon": "mdi:twitter"
     },
-    {
-        "url": "https://github.com/admirgorenca",
-        "description": "Admir Gorenca on GitHub",
-        "icon": "mdi:github"
-    },
-    {
-        "url": "https://discord.gg/93PJFCUP4k",
+    // {
+    //     "url": "https://github.com/admirgorenca",
+    //     "description": "Admir Gorenca on GitHub",
+    //     "icon": "mdi:github"
+    // },
+    // {
+    //     "url": "https://discord.gg/93PJFCUP4k",
         
-        "description": "Admir Gorenca on Discord",
-        "icon": "mdi:discord"
-    },
+    //     "description": "Admir Gorenca on Discord",
+    //     "icon": "mdi:discord"
+    // },
 ]

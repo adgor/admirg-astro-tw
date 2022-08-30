@@ -5,7 +5,8 @@ Project Description
 
 ### Todo
 
-- [ ] Hero paralax - OnScroll colorful heroImg && below content  
+- [ ] add content  
+- [ ] Hero paralax - OnScroll below content  
 
 ### In Progress
 

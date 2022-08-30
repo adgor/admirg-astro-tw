@@ -1,14 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-    		extend: {
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    extend: {
       colors: {
         bkg: "#171819",
         muted: "#c9cbcf",
         accent: "#007DB8",
+        brand: "#0460D9",
+        brandDark: "#021F59",
+        brandLight: "#0468BF",
+        brandMiddle: "#66C4D9",
+        brandBrown: "#BF8069",
       },
-      container:{
+      dropShadow: {
+        "text-sm": "1px 1px 0px rgba(0, 0, 0, 0.90)",
+        "text-md": "1px 2px 0px rgba(0, 0, 0, 0.90)",
+        "text-lg": "1px 4px 0px rgba(0, 0, 0, 0.90)",
+      },
+      container: {
         center: true,
         padding: {
           DEFAULT: "1rem",
@@ -16,12 +26,12 @@ module.exports = {
           lg: "4rem",
           xl: "5rem",
           "2xl": "6rem",
-        }
+        },
       },
-      fontFamily:{
-        sans: ["Outfit", "sans-serif"]
+      fontFamily: {
+        sans: ["Outfit", "sans-serif"],
       },
-      fontSize:{
+      fontSize: {
         sm: ["clamp(1.00rem, calc(0.92rem + 0.39vw), 1.20rem)", "1.4"],
         base: ["clamp(1.13rem, calc(0.98rem + 0.73vw), 1.50rem)", "1.5"],
         lg: ["clamp(1.27rem, calc(1.03rem + 1.19vw), 1.88rem)", "1.4"],
@@ -33,8 +43,9 @@ module.exports = {
         "6xl": ["clamp(2.57rem, calc(0.78rem + 8.95vw), 7.15rem)", "1"],
       },
       transitionDuration: {
-        '2000': '2000ms',
-      }},
-	},
-	plugins: [],
-}
+        2000: "2000ms",
+      },
+    },
+  },
+  plugins: [],
+};

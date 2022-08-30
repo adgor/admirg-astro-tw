@@ -14,7 +14,7 @@ import { navLinks, socialLinks } from "~/config/links";
           href="/"
           aria-label="Company"
           title="Company"
-          class="inline-flex items-center lg:mr-8 focus:outline-none focus-visible:ring-4 ring-accent transition-shadow rounded"
+          class="inline-flex items-center transition duration-500 rounded hover:text-white lg:mr-8 focus:outline-none focus-visible:ring-4 ring-brand"
         >
           <Icon name="mdi:discord" class="w-10" />
         </a>
@@ -23,7 +23,7 @@ import { navLinks, socialLinks } from "~/config/links";
             navLinks.map(({ title, url }) => (
               <li>
                 <a
-                  class="font-medium tracking-wide  transition-colors duration-200 capitalize hover:text-accent"
+                  class="font-medium tracking-wide capitalize transition-colors duration-500 hover:text-white"
                   href={url}
                 >
                   {title}
@@ -38,47 +38,50 @@ import { navLinks, socialLinks } from "~/config/links";
           socialLinks.map(({ icon, url }) => (
             <li>
               <a
-                class="font-medium tracking-wide  transition-colors duration-200 hover:text-accent"
+                class="font-medium tracking-wide transition-colors duration-500 hover:text-white "
                 href={url}
                 target="_blank"
               >
-                <Icon name={icon} class=" h-8 lg:h-5" />
+                <Icon name={icon} class="h-8 lg:h-5" />
               </a>
             </li>
           ))
         }
       </ul>
-      <!-- Mobile menu -->
+      <!-- Hamburger btn -->
       <div class="lg:hidden">
         <button
           id="open-btn"
           aria-label="Open Menu"
           title="Open Menu"
-          class="focus:outline-none focus:shadow-outline"
+          class="transition duration-500 rounded focus:outline-none focus:shadow-outline hover:text-white"
         >
           <Icon name="mdi:menu" class="h-8" />
         </button>
       </div>
     </div>
   </div>
-  <div id="mobile-menu" class="absolute w-1/2 top-0 z-20 right-0 hidden">
-    <div class="px-4 py-5 md:px-24 lg:px-8 h-screen bg-white border text-right">
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="absolute top-0 right-0 z-20 hidden w-1/2">
+    <div
+      class="h-screen px-4 py-5 text-right bg-brand text-bkg md:px-24 lg:px-8"
+    >
       <button
         id="close-btn"
         aria-label="Close Menu"
         title="Close Menu"
-        class="transition mb-4 duration-200 rounded focus:outline-none focus:shadow-outline"
+        class="mb-4 transition duration-500 rounded focus:outline-none hover:text-white focus:shadow-outline"
       >
         <Icon name="mdi:close" class="h-10" />
       </button>
 
       <nav class="">
-        <ul class="space-y-6 p-3 md:p-5">
+        <ul class="p-3 space-y-6 border-b border-[#3385FF] md:p-5">
           {
             navLinks.map(({ title, url }) => (
-              <li class=" border-b">
+              <li>
                 <a
-                  class=" text-xl font-medium tracking-wide  transition-colors duration-200 capitalize hover:text-accent"
+                  class="text-2xl font-medium tracking-wide capitalize transition duration-500 hover:text-white "
                   href={url}
                 >
                   {title}
@@ -87,6 +90,11 @@ import { navLinks, socialLinks } from "~/config/links";
             ))
           }
         </ul>
+        <p
+          class="p-3 mt-3 tracking-wider transition duration-500 hover:text-white md:p-5"
+        >
+          <a href="mailto:info@admin.com">info@admin.com</a>
+        </p>
       </nav>
     </div>
   </div>
