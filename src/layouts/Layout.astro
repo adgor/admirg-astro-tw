@@ -1,4 +1,6 @@
 ---
+import Header from "~/components/nav/Header.astro";
+
 export interface Props {
   title: string;
   description: string;
@@ -24,15 +26,14 @@ const { title, description } = Astro.props as Props;
     />
   </head>
 
-  <body
-    class="overflow-hidden bg-bkg text-brand selection:bg-brand selection:text-bkg"
-  >
+  <body class="bg-bkg text-brand selection:bg-brand selection:text-bkg">
     <div id="parallax">
       <div
         id="overlay"
         class="fixed top-0 left-0 hidden w-full h-full bg-black/50"
       >
       </div>
+      <Header />
       <slot />
     </div>
     <style>
