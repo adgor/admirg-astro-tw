@@ -54,7 +54,7 @@ import { navLinks, socialLinks } from "~/config/links";
           id="open-btn"
           aria-label="Open Menu"
           title="Open Menu"
-          class="transition duration-500 rounded focus:outline-none focus:shadow-outline hover:text-white"
+          class="flex items-center transition duration-500 rounded focus:outline-none focus:shadow-outline hover:text-white"
         >
           <Icon name="mdi:menu" class="h-8" />
         </button>
@@ -91,7 +91,7 @@ import { navLinks, socialLinks } from "~/config/links";
           }
         </ul>
         <p
-          class="p-3 mt-3 tracking-wider transition duration-500 hover:text-white md:p-5"
+          class="p-3 tracking-wider transition duration-500 sm:mt-3 hover:text-white md:p-5"
         >
           <a href="mailto:info@admin.com">info@admin.com</a>
         </p>
@@ -111,7 +111,6 @@ import { navLinks, socialLinks } from "~/config/links";
   function navToggle() {
     menu.classList.toggle("open");
     overlay.classList.toggle("hidden");
-    document.body.classList.toggle("overflow-hidden");
   }
 </script>
 

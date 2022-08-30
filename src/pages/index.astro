@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { NAME, SITE_DESCRIPTION } from "~/config/config";
 import Header from "~/components/nav/Header.astro";
 import Hero from "~/components/Hero.astro";
 ---
 
-<Layout description="nana" title="Welcome to Astro.">
+<Layout description={SITE_DESCRIPTION} title={NAME}>
 	<Header />
 	<Hero />
 	<main
