@@ -22,197 +22,423 @@ const projectDetails = [
 
 export interface Props {
     secStyle?: string;
+    activeTextColor: any;
 }
 
-const { secStyle = "mt-20" } = Astro.props as Props;
+const { activeTextColor, secStyle = "pt-20" } = Astro.props as Props;
 ---
 
-<section class={secStyle}>
-    <div
-        class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
-    >
-        <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-                <h2
-                    class="text-3xl tracking-tight text-white capitalize font-display sm:text-4xl md:text-5xl"
-                >
-                    Our work
-                </h2>
-            </div><div
-                class="grid items-center grid-cols-1 pt-10 mt-16 gap-y-2 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
-            >
-                <div
-                    class="flex pb-4 -mx-4 overflow-x-auto sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5"
-                >
-                    <div
-                        class="relative z-10 flex px-4 gap-x-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal"
-                        role="tablist"
-                        aria-orientation="vertical"
-                    >
-                        {
-                            projectDetails.map(({ title, body }) => (
-                                <div class="relative px-4 py-1 rounded-full group lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5">
-                                    <h3>
-                                        <button
-                                            class="font-display text-lg [&:not(:focus-visible)]:focus:outline-none text-blue-100 hover:text-white lg:text-white"
-                                            id="headlessui-tabs-tab-:R2ba9m:"
-                                            role="tab"
-                                            type="button"
-                                            aria-selected="false"
-                                            tabindex="-1"
-                                            aria-controls="headlessui-tabs-panel-:Rda9m:"
-                                        >
-                                            <span class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
-                                            {title}
-                                        </button>
-                                    </h3>
+<!-- Full or Self -->
+<div
+    id="tabs-id"
+    class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20"
+>
+    <div class="max-w-xl mb-10 sm:text-center md:mx-auto md:mb-12 lg:max-w-4xl">
+        <h2
+            class="mb-6 text-3xl font-extrabold leading-none text-matisse-700 sm:text-4xl md:mx-auto"
+        >
+            Full or Self-managed dedicated servers.
+        </h2>
+        <p class="text-base text-matisse-600 md:text-lg">
+            FidaHost have two primary options for dedicated servers and you can
+            choose between
+        </p>
+    </div>
 
-                                    {body.map((i) => (
-                                        <p class="hidden mt-2 text-sm text-blue-100 lg:block group-hover:text-white">
-                                            {i}
-                                        </p>
-                                    ))}
-                                </div>
-                            ))
-                        }
+    <div class="grid gap-8 row-gap-5 md:row-gap-8 lg:grid-cols-2">
+        <ul class="grid grid-cols-2 gap-5 row-gap-5">
+            <li class="flex-auto mr-2 -mb-px text-center last:mr-0">
+                <a
+                    class="block px-5 py-8 text-xs font-bold leading-normal text-center border rounded shadow border-matisse-500"
+                    onclick="changeAtiveTab(event,'tab-full')"
+                >
+                    <span class="flex flex-col items-center text-center">
+                        <svg
+                            width="64"
+                            height="64"
+                            viewBox="0 0 64 64"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M45.3337 6.66699H10.667C9.60613 6.66699 8.58871 7.08842 7.83857 7.83857C7.08842 8.58871 6.66699 9.60613 6.66699 10.667V45.3337C6.66699 46.3945 7.08842 47.4119 7.83857 48.1621C8.58871 48.9122 9.60613 49.3337 10.667 49.3337H45.3337C46.3945 49.3337 47.4119 48.9122 48.1621 48.1621C48.9122 47.4119 49.3337 46.3945 49.3337 45.3337V10.667C49.3337 9.60613 48.9122 8.58871 48.1621 7.83857C47.4119 7.08842 46.3945 6.66699 45.3337 6.66699Z"
+                                fill="#2F88FF"
+                                stroke="#1F5AA6"
+                                stroke-width="4"
+                                stroke-linejoin="round"></path>
+                            <path
+                                d="M58.6672 17.3359V55.9999C58.6672 56.7072 58.3863 57.3855 57.8862 57.8856C57.3861 58.3857 56.7078 58.6666 56.0006 58.6666H17.3379"
+                                stroke="#1F5AA6"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path
+                                d="M17.334 27.315L25.334 34.6817L38.6673 20.959"
+                                stroke="white"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+
+                        <span
+                            class="mt-4 text-base font-bold leading-5 text-matisse-700"
+                        >
+                            Full Server
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li class="flex-auto mr-2 -mb-px text-center last:mr-0">
+                <a
+                    class="block px-5 py-8 text-xs font-bold leading-normal bg-white border rounded shadow border-zircon-300"
+                    onclick="changeAtiveTab(event,'tab-self')"
+                >
+                    <span class="flex flex-col items-center text-center">
+                        <svg
+                            width="64"
+                            height="64"
+                            viewBox="0 0 64 64"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M36 46H32V42C31.9984 40.4092 31.3658 38.884 30.2409 37.7591C29.116 36.6342 27.5908 36.0016 26 36H18C16.4092 36.0016 14.884 36.6342 13.7591 37.7591C12.6342 38.884 12.0016 40.4092 12 42V46H8V42C8.00318 39.3488 9.05776 36.8071 10.9324 34.9324C12.8071 33.0578 15.3488 32.0032 18 32H26C28.6512 32.0032 31.1929 33.0578 33.0676 34.9324C34.9422 36.8071 35.9968 39.3488 36 42V46Z"
+                                fill="#1F5AA6"></path>
+                            <path
+                                d="M22 12C23.1867 12 24.3467 12.3519 25.3334 13.0112C26.3201 13.6705 27.0892 14.6075 27.5433 15.7039C27.9974 16.8003 28.1162 18.0067 27.8847 19.1705C27.6532 20.3344 27.0818 21.4035 26.2426 22.2426C25.4035 23.0818 24.3344 23.6532 23.1705 23.8847C22.0067 24.1162 20.8003 23.9974 19.7039 23.5433C18.6075 23.0892 17.6705 22.3201 17.0112 21.3334C16.3519 20.3467 16 19.1867 16 18C16 16.4087 16.6321 14.8826 17.7574 13.7574C18.8826 12.6321 20.4087 12 22 12V12ZM22 8C20.0222 8 18.0888 8.58649 16.4443 9.6853C14.7998 10.7841 13.5181 12.3459 12.7612 14.1732C12.0043 16.0004 11.8063 18.0111 12.1922 19.9509C12.578 21.8907 13.5304 23.6725 14.9289 25.0711C16.3275 26.4696 18.1093 27.422 20.0491 27.8079C21.9889 28.1937 23.9996 27.9957 25.8268 27.2388C27.6541 26.4819 29.2159 25.2002 30.3147 23.5557C31.4135 21.9112 32 19.9778 32 18C32 15.3478 30.9464 12.8043 29.0711 10.9289C27.1957 9.05357 24.6522 8 22 8V8Z"
+                                fill="#1F5AA6"></path>
+                            <path d="M4 52H60V56H4V52Z" fill="#1F5AA6"></path>
+                            <path
+                                d="M44 8V12H53.172L40 25.172L42.828 28L56 14.828V24H60V8H44Z"
+                                fill="#1F5AA6"></path>
+                        </svg>
+                        <span
+                            class="mt-4 text-base font-bold leading-5 text-matisse-700"
+                        >
+                            Self-managed server
+                        </span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <div class="relative flex flex-col w-full min-w-0 break-words">
+            <div class="flex-auto">
+                <div class="text-base tab-content tab-space text-matisse-600">
+                    <div class="block" id="tab-full">
+                        <p>
+                            FidaHost offers the best managed dedicated server
+                            solutions to support your business needs. You can
+                            choose between Linux or Windows operating systems
+                            and we will take care of all the server related
+                            responsibilities like core updates, maintenance and
+                            other requests you may have excluding custom made
+                            software/scripts installation and support.
+                        </p>
+                    </div>
+                    <div class="hidden" id="tab-self">
+                        <p>
+                            If you’re more of a DIY-er you can go with a
+                            self-managed option. With this option you have to
+                            take care of all the server responsibilities and
+                            maintenance tasks, whereas, FidaHost only takes care
+                            of the physical server hardware and its
+                            availability. Things like installing scripts and
+                            software, troubleshooting configuration issues,
+                            setting up firewall rules, etc. are all up to the
+                            client. Many of our clients have years of experience
+                            working with servers and have no problems with this.
+                        </p>
                     </div>
                 </div>
-                <div class="lg:col-span-7">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Full or Self -->
+
+<script define:vars={{}}>
+    function changeAtiveTab(event, tabID) {
+        let element = event.target;
+        while (element.nodeName !== "A") {
+            element = element.parentNode;
+        }
+        ulElement = element.parentNode.parentNode;
+        aElements = ulElement.querySelectorAll("li > a");
+        tabContents = document
+            .getElementById("tabs-id")
+            .querySelectorAll(".tab-content > div");
+        for (let i = 0; i < aElements.length; i++) {
+            aElements[i].classList.remove("border-matisse-500");
+            aElements[i].classList.add("border-zircon-300");
+            tabContents[i].classList.add("hidden");
+            tabContents[i].classList.remove("block");
+        }
+        element.classList.remove("border-zircon-300");
+        element.classList.add("border-matisse-500");
+        document.getElementById(tabID).classList.remove("hidden");
+        document.getElementById(tabID).classList.add("block");
+    }
+
+    // document.body
+    //     .querySelector("#button")
+    //     .addEventListener("click", () => changeAtiveTab(activeTextColor));
+</script>
+
+<section
+    class={` relative overflow-hidden bg-blue-600 pb-28 sm:py-32 ${secStyle}`}
+    id="features"
+    aria-label="our work"
+>
+    <!-- bg blured colorss
+        /> -->
+    <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+            <h2
+                class="text-3xl tracking-tight text-white capitalize font-display sm:text-4xl md:text-5xl"
+            >
+                our work
+            </h2>
+        </div>
+        <div
+            class="grid items-center grid-cols-1 pt-10 mt-16 gap-y-2 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
+        >
+            <div
+                class="flex pb-4 -mx-4 overflow-x-auto sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5"
+            >
+                <div
+                    class="relative z-10 flex px-4 tabs gap-x-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal"
+                    role="tablist"
+                    aria-orientation="vertical"
+                >
+                    {
+                        projectDetails.map(({ title, body }) => (
+                            <div class="relative px-4 py-1 bg-white rounded-full group lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5 lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10">
+                                <h3>
+                                    <button
+                                        class="font-display text-lg [&:not(:focus-visible)]:focus:outline-none text-blue-100 hover:text-white lg:text-white"
+                                        id="headlessui-tabs-tab-:R2ja9m:"
+                                        role="tab"
+                                        type="button"
+                                        aria-selected="false"
+                                        tabindex="-1"
+                                        aria-controls="headlessui-tabs-panel-:Rla9m:"
+                                    >
+                                        <span class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
+                                        {title}
+                                    </button>
+                                </h3>
+
+                                {body.map((i) => (
+                                    <p class="hidden mt-2 text-sm text-blue-100 lg:block group-hover:text-white">
+                                        {i}
+                                    </p>
+                                ))}
+                            </div>
+                        ))
+                    }
                     <div
-                        id="headlessui-tabs-panel-:Rda9m:"
-                        role="tabpanel"
-                        tabindex="-1"
-                        aria-labelledby="headlessui-tabs-tab-:R2ba9m:"
-                        style="display: none;"
-                        hidden=""
+                        class="relative px-4 py-1 rounded-full group lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5"
                     >
-                        <div class="relative sm:px-6 lg:hidden">
-                            <div
-                                class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
+                        <h3>
+                            <button
+                                class="font-display text-lg [&:not(:focus-visible)]:focus:outline-none text-blue-100 hover:text-white lg:text-white"
+                                id="headlessui-tabs-tab-:R2ja9m:"
+                                role="tab"
+                                type="button"
+                                aria-selected="false"
+                                tabindex="-1"
+                                aria-controls="headlessui-tabs-panel-:Rla9m:"
+                                ><span
+                                    class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"
+                                ></span>Claim expenses</button
                             >
-                            </div><p
-                                class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
-                            >
-                                Keep track of everyone's salaries and whether or
-                                not they've been paid. Direct deposit not
-                                supported.
-                            </p>
-                        </div><div
-                            class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
+                        </h3><p
+                            class="hidden mt-2 text-sm text-blue-100 lg:block group-hover:text-white"
                         >
-                            <img
-                                alt=""
-                                sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                                srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=3840&q=75 3840w"
-                                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=3840&q=75"
-                                width="2174"
-                                height="1464"
-                                decoding="async"
-                                data-nimg="future"
-                                class="w-full"
-                            />
-                        </div>
+                            All of your receipts organized into one place, as
+                            long as you don't mind typing in the data by hand.
+                        </p>
+                    </div>
+                    <div
+                        class="relative px-4 py-1 rounded-full group lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5"
+                    >
+                        <h3>
+                            <button
+                                class="font-display text-lg [&:not(:focus-visible)]:focus:outline-none text-blue-100 hover:text-white lg:text-white"
+                                id="headlessui-tabs-tab-:R2ra9m:"
+                                role="tab"
+                                type="button"
+                                aria-selected="false"
+                                tabindex="-1"
+                                aria-controls="headlessui-tabs-panel-:Rta9m:"
+                                ><span
+                                    class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"
+                                ></span>VAT handling</button
+                            >
+                        </h3><p
+                            class="hidden mt-2 text-sm text-blue-100 lg:block group-hover:text-white"
+                        >
+                            We only sell our software to companies who don't
+                            deal with VAT at all, so technically we do all the
+                            VAT stuff they need.
+                        </p>
+                    </div>
+                    <div
+                        class="relative px-4 py-1 rounded-full group lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5"
+                    >
+                        <h3>
+                            <button
+                                class="font-display text-lg [&:not(:focus-visible)]:focus:outline-none text-blue-100 hover:text-white lg:text-white"
+                                id="headlessui-tabs-tab-:R33a9m:"
+                                role="tab"
+                                type="button"
+                                aria-selected="false"
+                                tabindex="-1"
+                                aria-controls="headlessui-tabs-panel-:R15a9m:"
+                                ><span
+                                    class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"
+                                ></span>Reporting</button
+                            >
+                        </h3><p
+                            class="hidden mt-2 text-sm text-blue-100 lg:block group-hover:text-white"
+                        >
+                            Easily export your data into an Excel spreadsheet
+                            where you can do whatever the hell you want with it.
+                        </p>
+                    </div>
+                </div>
+            </div><div class="lg:col-span-7">
+                <div
+                    id="headlessui-tabs-panel-:Rda9m:"
+                    role="tabpanel"
+                    tabindex="0"
+                    aria-labelledby="headlessui-tabs-tab-:R2ba9m:"
+                    style=""
+                >
+                    <div class="relative sm:px-6 lg:hidden">
+                        <div
+                            class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
+                        >
+                        </div><p
+                            class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
+                        >
+                            Keep track of everyone's salaries and whether or not
+                            they've been paid. Direct deposit not supported.
+                        </p>
                     </div><div
-                        id="headlessui-tabs-panel-:Rla9m:"
-                        role="tabpanel"
-                        tabindex="-1"
-                        style="display: none;"
-                        aria-labelledby="headlessui-tabs-tab-:R2ja9m:"
-                        hidden=""
+                        class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
                     >
-                        <div class="relative sm:px-6 lg:hidden">
-                            <div
-                                class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
-                            >
-                            </div><p
-                                class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
-                            >
-                                All of your receipts organized into one place,
-                                as long as you don't mind typing in the data by
-                                hand.
-                            </p>
-                        </div><div
-                            class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
+                        <img
+                            alt=""
+                            sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                            srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=3840&q=75 3840w"
+                            src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpayroll.517af4e7.png&w=3840&q=75"
+                            width="2174"
+                            height="1464"
+                            decoding="async"
+                            data-nimg="future"
+                            class="w-full"
+                        />
+                    </div>
+                </div><div
+                    id="headlessui-tabs-panel-:Rla9m:"
+                    role="tabpanel"
+                    tabindex="-1"
+                    style="display: none;"
+                    aria-labelledby="headlessui-tabs-tab-:R2ja9m:"
+                    hidden=""
+                >
+                    <div class="relative sm:px-6 lg:hidden">
+                        <div
+                            class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
                         >
-                            <img
-                                alt=""
-                                sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                                srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=3840&q=75 3840w"
-                                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=3840&q=75"
-                                width="2174"
-                                height="1464"
-                                decoding="async"
-                                data-nimg="future"
-                                class="w-full"
-                            />
-                        </div>
+                        </div><p
+                            class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
+                        >
+                            All of your receipts organized into one place, as
+                            long as you don't mind typing in the data by hand.
+                        </p>
                     </div><div
-                        id="headlessui-tabs-panel-:Rta9m:"
-                        role="tabpanel"
-                        tabindex="-1"
-                        style="display: none;"
-                        aria-labelledby="headlessui-tabs-tab-:R2ra9m:"
-                        hidden=""
+                        class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
                     >
-                        <div class="relative sm:px-6 lg:hidden">
-                            <div
-                                class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
-                            >
-                            </div><p
-                                class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
-                            >
-                                We only sell our software to companies who don't
-                                deal with VAT at all, so technically we do all
-                                the VAT stuff they need.
-                            </p>
-                        </div><div
-                            class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
+                        <img
+                            alt=""
+                            sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                            srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=3840&q=75 3840w"
+                            src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fexpenses.3f331919.png&w=3840&q=75"
+                            width="2174"
+                            height="1464"
+                            decoding="async"
+                            data-nimg="future"
+                            class="w-full"
+                        />
+                    </div>
+                </div><div
+                    id="headlessui-tabs-panel-:Rta9m:"
+                    role="tabpanel"
+                    tabindex="-1"
+                    hidden=""
+                    style="display:none"
+                    aria-labelledby="headlessui-tabs-tab-:R2ra9m:"
+                >
+                    <div class="relative sm:px-6 lg:hidden">
+                        <div
+                            class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
                         >
-                            <img
-                                alt=""
-                                sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                                srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=3840&q=75 3840w"
-                                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=3840&q=75"
-                                width="2174"
-                                height="1464"
-                                decoding="async"
-                                data-nimg="future"
-                                class="w-full"
-                            />
-                        </div>
+                        </div><p
+                            class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
+                        >
+                            We only sell our software to companies who don't
+                            deal with VAT at all, so technically we do all the
+                            VAT stuff they need.
+                        </p>
                     </div><div
-                        id="headlessui-tabs-panel-:R15a9m:"
-                        role="tabpanel"
-                        tabindex="0"
-                        style=""
-                        aria-labelledby="headlessui-tabs-tab-:R33a9m:"
+                        class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
                     >
-                        <div class="relative sm:px-6 lg:hidden">
-                            <div
-                                class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
-                            >
-                            </div><p
-                                class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
-                            >
-                                Easily export your data into an Excel
-                                spreadsheet where you can do whatever the hell
-                                you want with it.
-                            </p>
-                        </div><div
-                            class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
+                        <img
+                            alt=""
+                            sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                            srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=3840&q=75 3840w"
+                            src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvat-returns.7402820f.png&w=3840&q=75"
+                            width="2174"
+                            height="1464"
+                            decoding="async"
+                            data-nimg="future"
+                            class="w-full"
+                        />
+                    </div>
+                </div><div
+                    id="headlessui-tabs-panel-:R15a9m:"
+                    role="tabpanel"
+                    tabindex="-1"
+                    hidden=""
+                    style="display:none"
+                    aria-labelledby="headlessui-tabs-tab-:R33a9m:"
+                >
+                    <div class="relative sm:px-6 lg:hidden">
+                        <div
+                            class="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"
                         >
-                            <img
-                                alt=""
-                                sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                                srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=3840&q=75 3840w"
-                                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=3840&q=75"
-                                width="2174"
-                                height="1464"
-                                decoding="async"
-                                data-nimg="future"
-                                class="w-full"
-                            />
-                        </div>
+                        </div><p
+                            class="relative max-w-2xl mx-auto text-base text-white sm:text-center"
+                        >
+                            Easily export your data into an Excel spreadsheet
+                            where you can do whatever the hell you want with it.
+                        </p>
+                    </div><div
+                        class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]"
+                    >
+                        <img
+                            alt=""
+                            sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                            srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=640&q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=750&q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=828&q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=1080&q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=1200&q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=1920&q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=2048&q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=3840&q=75 3840w"
+                            src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freporting.2ad6f065.png&w=3840&q=75"
+                            width="2174"
+                            height="1464"
+                            decoding="async"
+                            data-nimg="future"
+                            class="w-full"
+                        />
                     </div>
                 </div>
             </div>
