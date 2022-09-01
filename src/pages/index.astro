@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import LayoutWithHeader from "~/layouts/LayoutWithHeader.astro";
 import { NAME, SITE_DESCRIPTION } from "~/config/config";
 import Hero from "~/components/Hero.astro";
 import ProductFeatItem from "~/components/ProductFeatItem.astro";
 ---
 
-<Layout description={SITE_DESCRIPTION} title={NAME}>
+<LayoutWithHeader description={SITE_DESCRIPTION} title={NAME}>
 	<Hero />
 
 	<ProductFeatItem />
-</Layout>
+</LayoutWithHeader>

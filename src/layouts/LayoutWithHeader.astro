@@ -1,4 +1,6 @@
 ---
+import Header from "~/components/nav/Header.astro";
+
 export interface Props {
   title: string;
   description: string;
@@ -31,6 +33,7 @@ const { title, description } = Astro.props as Props;
         class="fixed top-0 left-0 hidden w-full h-full bg-black/50"
       >
       </div>
+      <Header />
       <slot />
     </div>
     <style>

@@ -7,6 +7,7 @@ import final from "~/assets/final.avif";
 const projectDetails = [
   {
     title: "Design as a System",
+    titleMobile: "Design",
     body: "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
     id: "design",
     ariaSelected: "true",
@@ -15,6 +16,7 @@ const projectDetails = [
   },
   {
     title: "Thoughtful Development",
+    titleMobile: "Development",
     body: "Responsive",
     id: "dev",
     ariaSelected: "false",
@@ -23,6 +25,7 @@ const projectDetails = [
   },
   {
     title: "Performance is King",
+    titleMobile: "Performance",
     body: "UX/UI Design",
     id: "speed",
     ariaSelected: "false",
@@ -31,6 +34,7 @@ const projectDetails = [
   },
   {
     title: "Final Results",
+    titleMobile: "Results",
     body: "Astro",
     id: "final",
     ariaSelected: "false",
@@ -41,16 +45,15 @@ const projectDetails = [
 
 export interface Props {
   secStyle?: string;
-  activeTextColor: any;
 }
 
 const { secStyle = "pt-20" } = Astro.props as Props;
 ---
 
 <section
-  class={` relative overflow-hidden bg-blue-600 pb-28 sm:py-32 ${secStyle}`}
+  class={` relative overflow-hidden  pb-28 sm:py-32 ${secStyle}`}
   id="features"
-  aria-label="our work"
+  aria-label="recent work"
 >
   <!-- bg blured colorss
         /> -->
@@ -74,24 +77,28 @@ const { secStyle = "pt-20" } = Astro.props as Props;
           aria-orientation="vertical"
         >
           {
-            projectDetails.map(({ title, body, id, ariaSelected }) => (
-              <li
-                class="relative px-4 py-1 rounded-full group lg:rounded-r-none lg:rounded-l-xl lg:p-6"
-                aria-selected={ariaSelected}
-                role="tab"
-                id={id}
-              >
-                <button
-                  class="font-display text-left [&:not(:focus-visible)]:focus:outline-none text-lg lg:text-white"
-                  type="button"
+            projectDetails.map(
+              ({ title, titleMobile, body, id, ariaSelected }) => (
+                <li
+                  class="relative px-4 py-1 rounded-full group lg:rounded-r-none lg:rounded-l-xl lg:p-6"
+                  aria-selected={ariaSelected}
+                  role="tab"
+                  id={id}
                 >
-                  <span class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
-                  {title}
-                </button>
+                  <button
+                    class="font-display text-left [&:not(:focus-visible)]:focus:outline-none text-lg lg:text-white"
+                    type="button"
+                  >
+                    <span class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
 
-                <p class="hidden mt-2 text-sm lg:block">{body}</p>
-              </li>
-            ))
+                    <span class=" lg:hidden">{titleMobile}</span>
+                    <span class="hidden lg:block">{title}</span>
+                  </button>
+
+                  <p class="hidden mt-2 text-sm lg:block">{body}</p>
+                </li>
+              )
+            )
           }
         </ul>
       </div>
@@ -100,12 +107,12 @@ const { secStyle = "pt-20" } = Astro.props as Props;
           projectDetails.map(({ hidden, imgSrc, body, id }) => (
             <div id={id} {hidden} role="tabpanel" aria-labelledby={id}>
               <div class="relative sm:px-6 lg:hidden">
-                <div class="absolute  -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
+                <div class="absolute  -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-brand/10 ring-1 ring-inset ring-brand/10 sm:inset-x-0 sm:rounded-t-xl" />
                 <p class="relative max-w-2xl mx-auto text-base text-white sm:text-center">
                   {body}
                 </p>
               </div>
-              <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <div class="mt-10 relative w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                 <img
                   alt=""
                   src={imgSrc}
@@ -126,7 +133,7 @@ const { secStyle = "pt-20" } = Astro.props as Props;
 
 <style lang="scss">
   li[aria-selected="false"] {
-    @apply hover:bg-white/10 lg:hover:bg-white/5;
+    @apply hover:bg-brand/10 lg:hover:bg-brand/5;
 
     button {
       @apply text-blue-100 hover:text-white;
@@ -137,10 +144,10 @@ const { secStyle = "pt-20" } = Astro.props as Props;
     }
   }
   li[aria-selected="true"] {
-    @apply bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10;
+    @apply bg-brand lg:bg-brand/10 lg:ring-1 lg:ring-inset lg:ring-brand/10;
 
     button {
-      @apply text-blue-600 lg:text-white;
+      @apply text-white lg:text-brand;
     }
 
     p {
@@ -149,7 +156,7 @@ const { secStyle = "pt-20" } = Astro.props as Props;
   }
 </style>
 
-<script>
+<script define:vars={{}}>
   const tabs = document.querySelector(".tabs");
   const tabButtons = tabs.querySelectorAll('[role="tab"]');
   const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
