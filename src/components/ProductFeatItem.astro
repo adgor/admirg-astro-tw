@@ -149,7 +149,7 @@ const { secStyle = "pt-20" } = Astro.props as Props;
   }
 </style>
 
-<script define:vars={{}}>
+<script>
   const tabs = document.querySelector(".tabs");
   const tabButtons = tabs.querySelectorAll('[role="tab"]');
   const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
