@@ -2,15 +2,12 @@
 
 Project Description
 
-
 ### Todo
 
-- [ ] add content  
-- [ ] Hero paralax - OnScroll below content  
+- [ ] update tab comp. -btn & -p
+- [ ] add content
+- [ ] Hero paralax - OnScroll below content
 
 ### In Progress
 
-
 ### Done ✓
-
-
