@@ -1,0 +1,122 @@
+---
+import Icon from "astro-icon";
+
+const workTechnologies = [
+  {
+    icon: "htmlIcon",
+    iconText: "htmlText",
+    hideIcon: "",
+  },
+  {
+    icon: "sass",
+    iconText: "sassText",
+    hideIcon: "",
+    hideIconText: "",
+  },
+  {
+    icon: "tailwind",
+    iconText: "tailwindText",
+    hideIcon: "",
+  },
+  {
+    icon: "astro",
+    iconText: "astroText",
+    hideIcon: "",
+    hideIconText: "",
+  },
+  {
+    icon: "nextjs",
+    iconText: "nextjs",
+    hideIcon: "hidden",
+    hideIconText: "",
+  },
+  {
+    icon: "gatsby",
+    iconText: "gatsbyText",
+    hideIcon: "",
+    hideIconText: "",
+  },
+  {
+    icon: "mongoDB",
+    iconText: "mongoDBText",
+    hideIcon: "",
+    hideIconText: "",
+  },
+  {
+    icon: "vercel",
+    iconText: "vercel",
+    hideIcon: "hidden",
+    hideIconText: "",
+  },
+  {
+    icon: "netlify",
+    iconText: "netlifyText",
+    hideIcon: "",
+    hideIconText: "",
+  },
+];
+---
+
+<section id="about">
+  <div
+    class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+  >
+    <div class="mb-10 md:mx-auto text-white max-w-screen-lg md:mb-12">
+      <h2 class="mb-6 text-3xl sm:text-5xl md:mx-auto">About</h2>
+      <p class="text-base md:text-xl font-normal tracking-tight">
+        Hello! My name is Admir and I enjoy creating things that live on the
+        internet. My interest in web development started back in 2016 when I
+        decided to try coding as a hobby — turns out making a variety of static
+        websites taught me a lot about HTML & CSS!
+      </p>
+
+      <div class="grid mt-32 gap-8 lg:grid-cols-2 sm:mx-auto">
+        <!-- technologies -->
+        <div class="flex flex-col">
+          <div class="mb-10 text-base">
+            Here are a few technologies <br /> I’ve been working with recently:
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-6"
+          >
+            {
+              workTechnologies.map(
+                ({ icon, hideIcon, iconText, hideIconText }) => (
+                  <div class="flex flex-row text-white/70 items-center p-4 sm:p-6 border-l border-white/10 hover:border-brand transition-colors duration-300">
+                    <Icon name={icon} class={`mr-3 w-12 h-12 ${hideIcon}`} />
+                    <Icon name={iconText} class={`w-28 h-28 ${hideIconText}`} />
+                  </div>
+                )
+              )
+            }
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="flex flex-col justify-center">
+          <div class="pb-4 mb-4">
+            <p class="text-sm">
+              Sportacus andrew weatherall goose Refined gentlemen super mario
+              des lynam alpha trion zap rowsdower, omar sharif old.
+            </p>
+          </div>
+          <div class="pb-4 mb-4">
+            <p class="text-sm">
+              Chase ball of string eat plants, meow, and throw up because I ate
+              plants going to catch the red dot today going to catch the red dot
+              today. I could pee on this if I had the energy.
+            </p>
+          </div>
+          <div>
+            <p class="text-sm">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae doloremque laudantium.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
