@@ -1,6 +1,7 @@
 ---
 import Header from "~/components/nav/Header.astro";
 import Footer from "~/components/nav/Footer.astro";
+import GetInTouch from "~/components/GetInTouch.astro";
 
 export interface Props {
   title: string;
@@ -36,6 +37,7 @@ const { title, description } = Astro.props as Props;
       </div>
       <Header />
       <slot />
+      <GetInTouch />
       <Footer />
     </div>
     <style>
