@@ -1,0 +1,80 @@
+---
+import post1 from "~/assets/image-post1.jpg";
+import post2 from "~/assets/image-post2.jpg";
+import post3 from "~/assets/image-post3.jpg";
+---
+
+<div class="mx-auto max-w-screen-lg px-3 py-6">
+  <div class="mb-6 text-2xl font-bold">
+    <div class="flex items-baseline text-white justify-between">
+      <h2 class="mb-6 text-3xl sm:text-5xl">About</h2>
+      <div class="text-sm">
+        <a href="/blog">View all Posts →</a>
+      </div>
+    </div>
+  </div><div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+    <a class="hover:translate-y-1" href="#"
+      ><div class="overflow-hidden rounded-md bg-slate-800">
+        <div class="aspect-w-3 aspect-h-2">
+          <img
+            class="h-full w-full object-cover object-center"
+            src={post1}
+            alt="Image post"
+            loading="lazy"
+          />
+        </div><div class="px-3 pt-4 pb-6 text-center">
+          <h2 class="text-xl font-semibold">Typography example</h2><div
+            class="mt-1 text-xs text-gray-400"
+          >
+            Feb 6, 2020
+          </div><div class="mt-2 text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            vero esse non molestias eos excepturi.
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="hover:translate-y-1" href="#"
+      ><div class="overflow-hidden rounded-md bg-slate-800">
+        <div class="aspect-w-3 aspect-h-2">
+          <img
+            class="h-full w-full object-cover object-center"
+            src={post2}
+            alt="Image post 2"
+            loading="lazy"
+          />
+        </div><div class="px-3 pt-4 pb-6 text-center">
+          <h2 class="text-xl font-semibold">5th Lorem ipsum dolor sit</h2><div
+            class="mt-1 text-xs text-gray-400"
+          >
+            Feb 5, 2020
+          </div><div class="mt-2 text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            vero esse non molestias eos excepturi.
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="hover:translate-y-1" href="#"
+      ><div class="overflow-hidden rounded-md bg-slate-800">
+        <div class="aspect-w-3 aspect-h-2">
+          <img
+            class="h-full w-full object-cover object-center"
+            src={post3}
+            alt="Image post 3"
+            loading="lazy"
+          />
+        </div><div class="px-3 pt-4 pb-6 text-center">
+          <h2 class="text-xl font-semibold">4th Lorem ipsum dolor sit</h2><div
+            class="mt-1 text-xs text-gray-400"
+          >
+            Feb 4, 2020
+          </div><div class="mt-2 text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+            vero esse non molestias eos excepturi.
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
