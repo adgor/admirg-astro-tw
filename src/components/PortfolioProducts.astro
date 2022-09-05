@@ -1,5 +1,41 @@
 ---
 import PortfolioProductItem from "./PortfolioProductItem.astro";
+
+import bl from "~/assets/blimmobilien.png";
+
+const projectDetails = [
+  {
+    heading: "Listing new Immobilien properties… FAST",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: bl,
+    webLink: "https://blimmobilien.netlify.app/",
+    responsability: [
+      {
+        title: "project",
+        body: ["Immobilien Website"],
+      },
+      //   {
+      //     title: "performance",
+      //     body: ["Responsive", "100% Score"],
+      //   },
+      {
+        title: "scope",
+        body: ["UX/UI Design", "Development"],
+      },
+      {
+        title: "technologies",
+        body: ["Astro", "Tailwind CSS", "Netlify"],
+      },
+    ],
+  },
+];
 ---
 
-<PortfolioProductItem />
+<section>
+  <div
+    class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+  >
+    <PortfolioProductItem data={projectDetails} />
+  </div>
+</section>
