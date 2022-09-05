@@ -1,0 +1,106 @@
+---
+const projectDetails = [
+  {
+    heading: "Listing new Immobilien <br /> properties… FAST",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc:
+      "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    responsability: [
+      {
+        title: "project",
+        body: ["Immobilien Website"],
+      },
+
+      {
+        title: "performance",
+        body: ["Responsive", "100% Score"],
+      },
+      {
+        title: "scope",
+        body: ["UX/UI Design", "Development"],
+      },
+      {
+        title: "technologies",
+        body: ["Astro", "Tailwind CSS", "Netlify"],
+      },
+    ],
+  },
+];
+export interface Props {
+  data?: any;
+  sectionStyle?: string;
+}
+const { sectionStyle = "text-brand" } = Astro.props as Props;
+---
+
+<section class={sectionStyle}>
+  <div
+    class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+  >
+    {
+      projectDetails.map(({ imgSrc, heading, description, responsability }) => (
+        <div class="py-16 mx-auto border-t border-white/10 max-w-screen-lg lg:py-20">
+          <div class="mb-10 md:mx-auto sm:text-center md:mb-12">
+            <img
+              class="object-cover w-full h-[564px] col-span-2 rounded shadow-lg"
+              src={imgSrc}
+              alt=""
+            />
+          </div>
+          <div class="grid max-w-screen-lg gap-8 lg:grid-cols-3 items-start sm:mx-auto">
+            {responsability.map(({ title, body }) => (
+              <div class="space-y-8">
+                <div class="flex border-t border-white/10 flex-col justify-center">
+                  <h6 class="mb-2 pt-3 text-base  capitalize">{title}</h6>
+
+                  {body.map((p) => (
+                    <p>{p} </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <div class="flex flex-col order-first lg:order-last col-span-2">
+              <h2 class="mb-6 font-sans text-2xl tracking-tight sm:text-3xl">
+                {heading}
+              </h2>
+              <p class="text-base md:text-lg">{description}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    {
+      projectDetails.map(({ imgSrc, heading, description, responsability }) => (
+        <div class="py-16 mx-auto border-t border-white/10 max-w-screen-lg lg:py-20">
+          <div class="mb-10 md:mx-auto sm:text-center md:mb-12">
+            <img
+              class="object-cover w-full h-[564px] col-span-2 rounded shadow-lg"
+              src={imgSrc}
+              alt=""
+            />
+          </div>
+          <div class="grid max-w-screen-lg gap-8 lg:grid-cols-3 items-start sm:mx-auto">
+            {responsability.map(({ title, body }) => (
+              <div class="space-y-8">
+                <div class="flex border-t border-white/10 flex-col justify-center">
+                  <h6 class="mb-2 pt-3 text-base  capitalize">{title}</h6>
+
+                  {body.map((p) => (
+                    <p>{p} </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <div class="flex flex-col order-first lg:order-last col-span-2">
+              <h2 class="mb-6 font-sans text-2xl tracking-tight sm:text-3xl">
+                {heading}
+              </h2>
+              <p class="text-base md:text-lg">{description}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

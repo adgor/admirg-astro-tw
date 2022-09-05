@@ -1,0 +1,11 @@
+---
+import LayoutWithHeader from "~/layouts/LayoutWithHeader.astro";
+import { NAME, SITE_DESCRIPTION } from "~/config/config";
+import SectionHeader from "~/components/SectionHeader.astro";
+import PortfolioProducts from "~/components/PortfolioProducts.astro";
+---
+
+<LayoutWithHeader description={SITE_DESCRIPTION} title={NAME}>
+  <SectionHeader />
+  <PortfolioProducts />
+</LayoutWithHeader>
