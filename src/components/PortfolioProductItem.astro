@@ -1,7 +1,8 @@
 ---
 import Icon from "astro-icon";
 import bl from "~/assets/blimmobilien.png";
-import Button from "./Button.astro";
+import nentori from "~/assets/28nentori.png";
+import drFida from "~/assets/dr-fida.png";
 
 const projectDetails = [
   {
@@ -30,6 +31,58 @@ const projectDetails = [
       },
     ],
   },
+  {
+    heading: "Listing new Immobilien properties… FAST",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: nentori,
+    webLink: "https://28nentori.netlify.app/",
+    brandColor: "text-brand",
+    responsability: [
+      {
+        title: "project",
+        body: ["High School Website"],
+      },
+      //   {
+      //     title: "performance",
+      //     body: ["Responsive", "100% Score"],
+      //   },
+      {
+        title: "scope",
+        body: ["UX/UI Design", "Development"],
+      },
+      {
+        title: "technologies",
+        body: ["Gatsby", "React i18next", "Tailwind CSS", "Netlify"],
+      },
+    ],
+  },
+  {
+    heading: "Listing new Immobilien properties… FAST",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: drFida,
+    webLink: "https://dr-fida.netlify.app/",
+    brandColor: "text-[#F25C84]",
+    responsability: [
+      {
+        title: "project",
+        body: ["Medical Office Website"],
+      },
+      //   {
+      //     title: "performance",
+      //     body: ["Responsive", "100% Score"],
+      //   },
+      {
+        title: "scope",
+        body: ["UX/UI Design", "Development"],
+      },
+      {
+        title: "technologies",
+        body: ["HTML", "Tailwind CSS", "Netlify"],
+      },
+    ],
+  },
 ];
 ---
 
@@ -50,7 +103,7 @@ const projectDetails = [
           <div class="py-16 mx-auto border-t border-white/10 max-w-screen-lg lg:py-20">
             <div class="mb-10 md:mx-auto sm:text-center md:mb-12">
               <img
-                class="object-cover object-top w-full h-[564px] col-span-2 rounded shadow-lg"
+                class="object-cover object-top w-full h-96 lg:h-[564px] col-span-2 rounded shadow-lg"
                 src={imgSrc}
                 alt=""
               />
@@ -58,9 +111,9 @@ const projectDetails = [
             <div
               class={`grid max-w-screen-lg gap-8 lg:grid-cols-3 items-start sm:mx-auto ${brandColor}`}
             >
-              <div>
+              <div class=" lg:col-span-1 lg:pr-16 lg:grid-cols-1 col-span-2 grid grid-cols-3 gap-y-0 gap-4">
                 {responsability.map(({ title, body }) => (
-                  <div class="space-y-8">
+                  <div class="  space-y-8">
                     <div class="flex border-t mb-5 border-white/10 flex-col justify-center">
                       <h6 class="mb-2   pt-3 text-base  capitalize">{title}</h6>
 
@@ -71,7 +124,7 @@ const projectDetails = [
                   </div>
                 ))}
               </div>
-              <div class="flex flex-col justify-between h-full order-first lg:order-last col-span-2">
+              <div class="flex flex-col justify-between h-full  col-span-2">
                 <div>
                   <h2 class="mb-6  max-w-sm lg:max-w-xl font-sans text-2xl tracking-tight sm:text-3xl">
                     {heading}
