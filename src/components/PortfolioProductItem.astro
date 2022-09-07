@@ -1,4 +1,5 @@
 ---
+import Icon from "astro-icon";
 import bl from "~/assets/blimmobilien.png";
 import Button from "./Button.astro";
 
@@ -9,7 +10,7 @@ const projectDetails = [
       " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
     imgSrc: bl,
     webLink: "https://blimmobilien.netlify.app/",
-    brandColor: "red-500",
+    brandColor: "text-[#D5A44E]",
     responsability: [
       {
         title: "project",
@@ -55,7 +56,7 @@ const projectDetails = [
               />
             </div>
             <div
-              class={`grid max-w-screen-lg gap-8 lg:grid-cols-3 items-start sm:mx-auto text-${brandColor}`}
+              class={`grid max-w-screen-lg gap-8 lg:grid-cols-3 items-start sm:mx-auto ${brandColor}`}
             >
               <div>
                 {responsability.map(({ title, body }) => (
@@ -78,14 +79,14 @@ const projectDetails = [
                   <p class="text-base md:text-lg">{description}</p>
                 </div>
                 <div class="mt-6">
-                  <Button
-                    target={true}
-                    link={webLink}
-                    iconSpan="hidden"
-                    btnColorStyle={`bg-${brandColor} hover:text-white`}
+                  <a
+                    target="_blank"
+                    href={webLink}
+                    class="inline-flex items-center font-semibold tracking-wider px-8 py-4 text-xs  duration-700 transition-colors border-2 rounded-sm text-white border-white hover:bg-white/10 uppercase "
                   >
-                    See DEMO
-                  </Button>
+                    <span class="tracking-wide">see demo</span>
+                    <Icon name="mdi:menu-right" class="w-5 h-5" />
+                  </a>
                 </div>
               </div>
             </div>
