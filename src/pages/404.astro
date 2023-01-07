@@ -1,0 +1,19 @@
+---
+import LayoutWithHeader from "~/layouts/LayoutWithHeader.astro";
+import { SITE_DESCRIPTION } from "~/config/config";
+import SectionHeader from "~/components/SectionHeader.astro";
+import Btn from "~/components/Btn.astro";
+---
+
+<LayoutWithHeader description={SITE_DESCRIPTION} title="Page Not Found">
+  <SectionHeader
+    title="Lost in space?"
+    subTitle="We couldn’t find the page you were looking for—let’s get you back to HQ."
+  >
+    <div class="border-b border-white/10">
+      <Btn href="/" class="my-16" variant="outline" color="brand">
+        Retutn Home
+      </Btn>
+    </div>
+  </SectionHeader>
+</LayoutWithHeader>
