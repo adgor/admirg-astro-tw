@@ -1,0 +1,63 @@
+---
+// component imports
+import Layout from "~/layouts/Layout.astro";
+import Header from "~/components/nav/Header.astro";
+import Footer from "~/components/nav/Footer.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+
+// utils imports
+import { formatDate, slugify } from "~/js/utils";
+
+const { frontmatter } = Astro.props;
+
+const { title, description, date, category, author, image } = frontmatter;
+---
+
+<Layout {description} {title}>
+  <Header />
+  <SectionHeader>
+    <p class="text-sm font-medium text-slate-200">
+      <a href={`/category/${slugify(category)}/`} class="hover:underline"
+        >{category}</a
+      >
+    </p>
+    <div class="flex space-x-1 text-sm leading-6 text-gray-500">
+      <time datetime={date}>{formatDate(date)}</time>
+      <!-- <span aria-hidden="true">·</span>
+      <span>4 min read</span> -->
+    </div>
+    <h1
+      class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl"
+    >
+      {title}
+    </h1>
+    <div class="mt-6 flex items-center">
+      <div class="flex-shrink-0">
+        <a href="#">
+          <span class="sr-only">{author}</span>
+          <img
+            class="h-10 w-10 rounded-full"
+            src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="ml-3">
+        <p class="text-sm font-medium text-slate-200">
+          <a href={`/author/${slugify(author)}/`} class="hover:underline"
+            >{author}</a
+          >
+        </p>
+
+        <a
+          href="https://twitter.com/adamwathan"
+          class="text-sky-500 hover:text-sky-600 dark:text-sky-400"
+          >@admirgorenca</a
+        >
+      </div>
+    </div>
+    <slot />
+  </SectionHeader>
+
+  <Footer />
+</Layout>
