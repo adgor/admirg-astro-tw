@@ -3,105 +3,100 @@ import Layout from "~/layouts/Layout.astro";
 import { NAME, SITE_DESCRIPTION } from "~/config/config";
 import { navLinks, socialLinks } from "~/config/links";
 import { Icon } from "astro-icon";
+import { Image } from "@astrojs/image/components";
 
 // assets && || data
-import avatar from "~/assets/admir-gorenca-avatar.avif";
+import avatar from "~/assets/admirg-80.png";
 // take the list of links in NavLinks
 // and return a new array of only those links that we want
 // to display then `map` over that array in our comp
 function getFilteredLinks() {
-	return navLinks.filter((link) => {
-		const name = link.title.toLowerCase();
-		return !name.includes("/links");
-	});
+  return navLinks.filter((link) => {
+    const name = link.title.toLowerCase();
+    return !name.includes("/links");
+  });
 }
 ---
 
 <Layout description={SITE_DESCRIPTION} title={`${NAME} - Links`}>
-	<main>
-		<header id="my-background" class="h-screen">
-			<div class="w-full h-screen bg-center bg-cover bgImg">
-				<div
-					id="content"
-					class="flex flex-col items-center justify-center w-full h-full transition-opacity ease-in opacity-0 duration-2000 bg-gray-900/30"
-				>
-					<div class="space-y-4 text-center text-white">
-						<div class="flex justify-center">
-							<img
-								class="object-cover w-20 h-20 md:w-24 md:h-24 border-2 rounded-full border-slate-100"
-								alt="Admir Gorenca avatar"
-								src={avatar}
-							/>
-						</div>
-						<h1
-							class="py-2 md:py-3 md:px-8 mx-12 text-base lowercase rounded-lg ring-slate-500 ring-1 bg-slate-900/70 lg:text-lg"
-						>
-							@admirgorenca
-						</h1>
-						<p class="drop-shadow-2xl">
-							Designer & Developer, I love thinking <br />
-							through frontend architecture;
-						</p>
+  <main>
+    <header id="my-background" class="h-screen">
+      <div class="w-full h-screen bg-center bg-cover bgImg">
+        <div
+          id="content"
+          class="flex flex-col items-center justify-center w-full h-full transition-opacity ease-in opacity-0 duration-2000 bg-gray-900/30"
+        >
+          <div class="space-y-4 text-center text-white">
+            <div class="flex justify-center">
+              <Image
+                class="object-cover w-20 h-20 md:w-24 md:h-24 border-2 rounded-full border-slate-100"
+                alt="Admir Gorenca avatar"
+                src={avatar}
+              />
+            </div>
+            <h1
+              class="py-2 md:py-3 md:px-8 mx-12 text-base lowercase rounded-lg ring-slate-500 ring-1 bg-slate-900/70 lg:text-lg"
+            >
+              @admirgorenca
+            </h1>
+            <p class="drop-shadow-2xl">
+              Designer & Developer, I love thinking <br />
+              through frontend architecture;
+            </p>
 
-						<div class="flex justify-center space-x-5">
-							{
-								socialLinks.map(
-									({ url, icon, description }) => (
-										<a href={url}>
-											<Icon
-												name={icon}
-												class="w-8 h-8 transition-transform duration-300 hover:scale-110"
-											/>
-											<h2 class="sr-only ">
-												{description}
-											</h2>
-										</a>
-									)
-								)
-							}
-						</div>
-					</div>
-					<div
-						class="w-64 mb-10 md:mb-0 mx-auto mt-5 text-center md:w-96"
-					>
-						<ul class="space-y-2">
-							<li>
-								<a href="/">
-									<div
-										class="py-2 md:py-4 text-base md:font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50"
-									>
-										official website
-									</div>
-								</a>
-							</li>
-							{
-								getFilteredLinks().map(({ title, url }) => (
-									<li>
-										<a href={url}>
-											<div class=" py-2 md:py-4 text-base md:font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50 ">
-												{title}
-											</div>
-										</a>
-									</li>
-								))
-							}
-						</ul>
-					</div>
-				</div>
-			</div>
-		</header>
-	</main>
+            <div class="flex justify-center space-x-5">
+              {
+                socialLinks.map(({ url, icon, description }) => (
+                  <a href={url}>
+                    <Icon
+                      name={icon}
+                      class="w-8 h-8 transition-transform duration-300 hover:scale-110"
+                    />
+                    <h2 class="sr-only ">{description}</h2>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+          <div class="w-64 mb-10 md:mb-0 mx-auto mt-5 text-center md:w-96">
+            <ul class="space-y-2">
+              <li>
+                <a href="/">
+                  <div
+                    class="py-2 md:py-4 text-base md:font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50"
+                  >
+                    official website
+                  </div>
+                </a>
+              </li>
+              {
+                getFilteredLinks().map(({ title, url }) => (
+                  <li>
+                    <a href={url}>
+                      <div class=" py-2 md:py-4 text-base md:font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50 ">
+                        {title}
+                      </div>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </main>
 </Layout>
 
 <script>
-	setTimeout(() => {
-		const content = document.querySelector("#content");
-		content.style.opacity = 1;
-	}, 1000);
+  setTimeout(() => {
+    const content = document.querySelector("#content");
+    content.style.opacity = 1;
+  }, 1000);
 </script>
 
 <style>
-	.bgImg {
-		background-image: url("../assets/bg.avif");
-	}
+  .bgImg {
+    background-image: url("../assets/bg.avif");
+  }
 </style>

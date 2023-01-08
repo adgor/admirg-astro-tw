@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import post1 from "~/assets/image-post1.jpg";
 import post2 from "~/assets/image-post2.jpg";
 import post3 from "~/assets/image-post4.jpg";
@@ -100,16 +101,10 @@ import post3 from "~/assets/image-post4.jpg";
             class="relative h-48 overflow-hidden rounded-xl group-hover:shadow-sm group-hover:transition-all group-hover:duration-500 transition-all duration-500 shadow-brand/10 shadow-lg sm:h-60 lg:h-40"
           >
             <div class="absolute inset-0 flex items-center justify-center">
-              <img
+              <Image
                 alt=""
-                sizes="(min-width: 1280px) 21rem, (min-width: 1024px) 33vw, (min-width: 768px) 19rem, (min-width: 640px) 50vw, 100vw"
                 src={post1}
-                width="4096"
-                height="4096"
-                decoding="async"
-                data-nimg="future"
                 class="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
               />
             </div>
           </div>
@@ -131,16 +126,10 @@ import post3 from "~/assets/image-post4.jpg";
             class="relative h-48 overflow-hidden rounded-xl group-hover:shadow-sm group-hover:transition-all group-hover:duration-500 transition-all duration-500 shadow-brand/10 shadow-lg sm:h-60 lg:h-40"
           >
             <div class="absolute inset-0 flex items-center justify-center">
-              <img
+              <Image
                 alt=""
-                sizes="(min-width: 1280px) 21rem, (min-width: 1024px) 33vw, (min-width: 768px) 19rem, (min-width: 640px) 50vw, 100vw"
                 src={post2}
-                width="4096"
-                height="4096"
-                decoding="async"
-                data-nimg="future"
                 class="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
               />
             </div>
           </div>
@@ -162,22 +151,16 @@ import post3 from "~/assets/image-post4.jpg";
             class="relative h-48 overflow-hidden rounded-xl group-hover:shadow-sm group-hover:transition-all group-hover:duration-500 transition-all duration-500 shadow-brand/10 shadow-lg sm:h-60 lg:h-40"
           >
             <div class="absolute inset-0 flex items-center justify-center">
-              <img
+              <Image
                 alt=""
-                sizes="(min-width: 1280px) 21rem, (min-width: 1024px) 33vw, (min-width: 768px) 19rem, (min-width: 640px) 50vw, 100vw"
                 src={post3}
-                width="4096"
-                height="4096"
-                decoding="async"
-                data-nimg="future"
                 class="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
               />
             </div>
           </div>
           <div class="pt-10">
             <h3 class="text-base text-white font-medium tracking-tight">
-              Weekly icon teardowns
+              Install Windows Terminal
             </h3><p class="mt-2 text-slate-400 text-sm">
               Weekly videos where we dissect and recreate beautiful icons we
               find on the web.
