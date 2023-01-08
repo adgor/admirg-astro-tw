@@ -4,9 +4,12 @@ import Layout from "~/layouts/Layout.astro";
 import Header from "~/components/nav/Header.astro";
 import Footer from "~/components/nav/Footer.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
+import { Image } from "@astrojs/image/components";
 
 // utils imports
 import { formatDate, slugify } from "~/js/utils";
+
+import avatar from "~/assets/admirg-80.png";
 
 const { frontmatter } = Astro.props;
 
@@ -16,29 +19,29 @@ const { title, description, date, category, author, image } = frontmatter;
 <Layout {description} {title}>
   <Header />
   <SectionHeader>
-    <p class="text-sm font-medium text-slate-200">
+    <p class="text-sm font-medium text-slate-400">
       <a href={`/category/${slugify(category)}/`} class="hover:underline"
         >{category}</a
       >
     </p>
-    <div class="flex space-x-1 text-sm leading-6 text-gray-500">
+    <div class="flex space-x-1 text-sm leading-6 text-slate-500">
       <time datetime={date}>{formatDate(date)}</time>
       <!-- <span aria-hidden="true">·</span>
       <span>4 min read</span> -->
     </div>
     <h1
-      class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl"
+      class="text-2xl mt-6 font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl"
     >
       {title}
     </h1>
-    <div class="mt-6 flex items-center">
+    <div class="mt-5 flex items-center">
       <div class="flex-shrink-0">
         <a href="#">
           <span class="sr-only">{author}</span>
-          <img
+          <Image
             class="h-10 w-10 rounded-full"
-            src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            alt=""
+            src={avatar}
+            alt="Author avatar"
           />
         </a>
       </div>
@@ -51,12 +54,17 @@ const { title, description, date, category, author, image } = frontmatter;
 
         <a
           href="https://twitter.com/adamwathan"
-          class="text-sky-500 hover:text-sky-600 dark:text-sky-400"
+          class="text-brand hover:text-brand/80 dark:text-brand"
           >@admirgorenca</a
         >
       </div>
     </div>
-    <slot />
+
+    <div
+      class="mt-12 prose prose-headings:text-slate-200 prose-p:text-slate-400 prose-a:text-white prose-ol:text-slate-400 prose-code:text-slate-200"
+    >
+      <slot />
+    </div>
   </SectionHeader>
 
   <Footer />
