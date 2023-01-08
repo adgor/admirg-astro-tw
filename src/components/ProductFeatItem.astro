@@ -1,8 +1,12 @@
 ---
-import design from "~/assets/design.avif";
-import dev from "~/assets/dev.avif";
-import speed from "~/assets/speed.avif";
-import final from "~/assets/final.avif";
+import { Image } from "@astrojs/image/components";
+
+import design from "~/assets/services.png";
+import dev from "~/assets/blog-blimmobilienag.png";
+import speed from "~/assets/pagespeed-insights.png";
+import final from "~/assets/blimmobilienag.png";
+
+// console.log(design);
 
 const projectDetails = [
   {
@@ -112,15 +116,11 @@ const { secStyle = "pt-20" } = Astro.props as Props;
                   {body}
                 </p>
               </div>
-              <div class="mt-10 relative w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
-                <img
-                  alt=""
+              <div class="mt-10 relative w-[45rem] overflow-hidden rounded-xl  shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                <Image
+                  alt="Bl-immobilien-Ag website"
                   src={imgSrc}
-                  width="2174"
-                  height="1464"
-                  decoding="async"
-                  data-nimg="future"
-                  class="w-full "
+                  class="top-0 "
                 />
               </div>
             </div>

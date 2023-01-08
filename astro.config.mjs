@@ -8,5 +8,13 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   site: "https://admirg.netlify.app",
-  integrations: [tailwind(), mdx(), preact(), sitemap()],
+  integrations: [
+    tailwind(),
+    mdx(),
+    preact(),
+    sitemap(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+  ],
 });
