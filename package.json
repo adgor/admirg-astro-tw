@@ -7,7 +7,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write \"src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}\"",
+    "clean": "rimraf dist node_modules"
   },
   "devDependencies": {
     "@astrojs/image": "^0.12.1",
@@ -20,7 +22,10 @@
     "astro-icon": "^0.7.3",
     "clsx": "^1.2.1",
     "preact": "^10.11.3",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
     "sass": "^1.57.1",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "tailwindcss-scoped-groups": "^2.0.0"
   }
 }

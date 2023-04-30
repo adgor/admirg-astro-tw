@@ -19,8 +19,8 @@ const workTechnologies = [
     hideIcon: "",
   },
   {
-    icon: "astro",
-    iconText: "astroText",
+    icon: "react",
+    iconText: "reactText",
     hideIcon: "",
     hideIconText: "",
   },
@@ -59,9 +59,9 @@ const workTechnologies = [
 
 <section id="about">
   <div
-    class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+    class="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20"
   >
-    <div class="max-w-screen-lg mb-10 text-white md:mx-auto md:mb-12">
+    <div class="mb-10 max-w-screen-lg text-white md:mx-auto md:mb-12">
       <h2 class="mb-6 text-3xl sm:text-5xl md:mx-auto">About</h2>
       <p class="text-base font-normal tracking-tight md:text-xl">
         Hello! My name is Admir and I enjoy creating things that live on the
@@ -70,7 +70,7 @@ const workTechnologies = [
         websites taught me a lot about HTML & CSS!
       </p>
 
-      <div class="grid gap-8 mt-10 lg:mt-32 lg:grid-cols-2 sm:mx-auto">
+      <div class="mt-10 grid gap-8 sm:mx-auto lg:mt-32 lg:grid-cols-2">
         <!-- technologies -->
         <div class="flex flex-col">
           <div class="mb-10 text-base">
@@ -78,14 +78,14 @@ const workTechnologies = [
           </div>
 
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-6"
+            class="grid grid-cols-1 gap-x-4 sm:grid-cols-2 sm:gap-x-6 md:grid-cols-3"
           >
             {
               workTechnologies.map(
                 ({ icon, hideIcon, iconText, hideIconText }) => (
-                  <div class="flex flex-row items-center p-4 transition-colors duration-300 border-l text-white/70 sm:p-6 border-white/10 hover:border-brand">
-                    <Icon name={icon} class={`mr-3 w-12 h-12 ${hideIcon}`} />
-                    <Icon name={iconText} class={`w-28 h-28 ${hideIconText}`} />
+                  <div class="flex flex-row items-center border-l border-white/10 p-4 text-white/70 transition-colors duration-300 hover:border-brand sm:p-6">
+                    <Icon name={icon} class={`mr-3 h-12 w-12 ${hideIcon}`} />
+                    <Icon name={iconText} class={`h-28 w-28 ${hideIconText}`} />
                   </div>
                 )
               )
@@ -94,14 +94,14 @@ const workTechnologies = [
         </div>
 
         <!-- content -->
-        <div class="flex flex-col justify-center order-first lg:order-last">
-          <div class="pb-4 mb-4">
+        <div class="order-first flex flex-col justify-center lg:order-last">
+          <div class="mb-4 pb-4">
             <p class="text-sm">
               Sportacus andrew weatherall goose Refined gentlemen super mario
               des lynam alpha trion zap rowsdower, omar sharif old.
             </p>
           </div>
-          <div class="pb-4 mb-4">
+          <div class="mb-4 pb-4">
             <p class="text-sm">
               Chase ball of string eat plants, meow, and throw up because I ate
               plants going to catch the red dot today going to catch the red dot

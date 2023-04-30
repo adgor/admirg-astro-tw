@@ -21,21 +21,21 @@ function getFilteredLinks() {
 <Layout description={SITE_DESCRIPTION} title={`${NAME} - Links`}>
   <main>
     <header id="my-background" class="h-screen">
-      <div class="w-full h-screen bg-center bg-cover bgImg">
+      <div class="bgImg h-screen w-full bg-cover bg-center">
         <div
           id="content"
-          class="flex flex-col items-center justify-center w-full h-full transition-opacity ease-in opacity-0 duration-2000 bg-gray-900/30"
+          class="flex h-full w-full flex-col items-center justify-center bg-gray-900/30 opacity-0 transition-opacity duration-2000 ease-in"
         >
           <div class="space-y-4 text-center text-white">
             <div class="flex justify-center">
               <Image
-                class="object-cover w-20 h-20 md:w-24 md:h-24 border-2 rounded-full border-slate-100"
+                class="h-20 w-20 rounded-full border-2 border-slate-100 object-cover md:h-24 md:w-24"
                 alt="Admir Gorenca avatar"
                 src={avatar}
               />
             </div>
             <h1
-              class="py-2 md:py-3 md:px-8 mx-12 text-base lowercase rounded-lg ring-slate-500 ring-1 bg-slate-900/70 lg:text-lg"
+              class="mx-12 rounded-lg bg-slate-900/70 py-2 text-base lowercase ring-1 ring-slate-500 md:px-8 md:py-3 lg:text-lg"
             >
               @admirgorenca
             </h1>
@@ -50,7 +50,7 @@ function getFilteredLinks() {
                   <a href={url}>
                     <Icon
                       name={icon}
-                      class="w-8 h-8 transition-transform duration-300 hover:scale-110"
+                      class="h-8 w-8 transition-transform duration-300 hover:scale-110"
                     />
                     <h2 class="sr-only ">{description}</h2>
                   </a>
@@ -58,12 +58,12 @@ function getFilteredLinks() {
               }
             </div>
           </div>
-          <div class="w-64 mb-10 md:mb-0 mx-auto mt-5 text-center md:w-96">
+          <div class="mx-auto mb-10 mt-5 w-64 text-center md:mb-0 md:w-96">
             <ul class="space-y-2">
               <li>
                 <a href="/">
                   <div
-                    class="py-2 md:py-4 text-base md:font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50"
+                    class="rounded-lg bg-slate-300/50 py-2 text-base capitalize text-gray-900 backdrop-blur-md backdrop-filter transition-transform duration-500 hover:scale-105 md:py-4 md:font-semibold"
                   >
                     official website
                   </div>
@@ -73,7 +73,7 @@ function getFilteredLinks() {
                 getFilteredLinks().map(({ title, url }) => (
                   <li>
                     <a href={url}>
-                      <div class=" py-2 md:py-4 text-base md:font-semibold text-gray-900 capitalize transition-transform duration-500 rounded-lg hover:scale-105 backdrop-filter backdrop-blur-md bg-slate-300/50 ">
+                      <div class=" rounded-lg bg-slate-300/50 py-2 text-base capitalize text-gray-900 backdrop-blur-md backdrop-filter transition-transform duration-500 hover:scale-105 md:py-4 md:font-semibold ">
                         {title}
                       </div>
                     </a>

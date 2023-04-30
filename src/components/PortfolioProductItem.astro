@@ -25,10 +25,10 @@ const projectDetails = [
         title: "scope",
         body: ["UX/UI Design", "Development"],
       },
-      {
-        title: "technologies",
-        body: ["Astro", "Tailwind CSS", "Netlify"],
-      },
+      // {
+      //   title: "technologies",
+      //   body: ["Astro", "Tailwind CSS", "Netlify"],
+      // },
     ],
   },
   {
@@ -51,10 +51,10 @@ const projectDetails = [
         title: "scope",
         body: ["UX/UI Design", "Development"],
       },
-      {
-        title: "technologies",
-        body: ["Gatsby", "React i18next", "Tailwind CSS", "Netlify"],
-      },
+      // {
+      //   title: "technologies",
+      //   body: ["Gatsby", "React i18next", "Tailwind CSS", "Netlify"],
+      // },
     ],
   },
   {
@@ -77,10 +77,10 @@ const projectDetails = [
         title: "scope",
         body: ["UX/UI Design", "Development"],
       },
-      {
-        title: "technologies",
-        body: ["HTML", "Tailwind CSS", "Netlify"],
-      },
+      // {
+      //   title: "technologies",
+      //   body: ["HTML", "Tailwind CSS", "Netlify"],
+      // },
     ],
   },
 ];
@@ -88,7 +88,7 @@ const projectDetails = [
 
 <section>
   <div
-    class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+    class="mx-auto px-4 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8"
   >
     {
       projectDetails.map(
@@ -100,21 +100,21 @@ const projectDetails = [
           webLink,
           brandColor,
         }) => (
-          <div class="py-16 mx-auto border-t border-white/10 max-w-screen-lg lg:py-20">
-            <div class="mb-10 md:mx-auto sm:text-center md:mb-12">
+          <div class="mx-auto max-w-screen-lg border-t border-white/10 py-16 lg:py-20">
+            <div class="mb-10 sm:text-center md:mx-auto md:mb-12">
               <img
-                class="object-cover object-top w-full h-96 lg:h-[564px] col-span-2 rounded shadow-lg"
+                class="col-span-2 h-96 w-full rounded object-cover object-top shadow-lg lg:h-[564px]"
                 src={imgSrc}
                 alt=""
               />
             </div>
             <div
-              class={`grid max-w-screen-lg gap-8 lg:grid-cols-3 items-start sm:mx-auto ${brandColor}`}
+              class={`grid max-w-screen-lg items-start gap-8 sm:mx-auto lg:grid-cols-3 ${brandColor}`}
             >
-              <div class=" lg:col-span-1 lg:pr-16 lg:grid-cols-1 col-span-2 grid grid-cols-3 gap-y-0 gap-4">
+              <div class=" col-span-2 grid grid-cols-3 gap-4 gap-y-0 lg:col-span-1 lg:grid-cols-1 lg:pr-16">
                 {responsability.map(({ title, body }) => (
                   <div class="  space-y-8">
-                    <div class="flex border-t mb-5 border-white/10 flex-col justify-center">
+                    <div class="mb-5 flex flex-col justify-center border-t border-white/10">
                       <h6 class="mb-2   pt-3 text-base  capitalize">{title}</h6>
 
                       {body.map((p) => (
@@ -124,9 +124,9 @@ const projectDetails = [
                   </div>
                 ))}
               </div>
-              <div class="flex flex-col justify-between h-full  col-span-2">
+              <div class="col-span-2 flex h-full flex-col  justify-between">
                 <div>
-                  <h2 class="mb-6  max-w-sm lg:max-w-xl font-sans text-2xl tracking-tight sm:text-3xl">
+                  <h2 class="mb-6  max-w-sm font-sans text-2xl tracking-tight sm:text-3xl lg:max-w-xl">
                     {heading}
                   </h2>
                   <p class="text-base md:text-lg">{description}</p>
@@ -135,10 +135,10 @@ const projectDetails = [
                   <a
                     target="_blank"
                     href={webLink}
-                    class="inline-flex items-center font-semibold tracking-wider px-8 py-4 text-xs  duration-700 transition-colors border-2 rounded-sm text-white border-white hover:bg-white/10 uppercase "
+                    class="inline-flex items-center rounded-sm border-2 border-white px-8 py-4  text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-700 hover:bg-white/10 "
                   >
                     <span class="tracking-wide">see demo</span>
-                    <Icon name="mdi:menu-right" class="w-5 h-5" />
+                    <Icon name="mdi:menu-right" class="h-5 w-5" />
                   </a>
                 </div>
               </div>

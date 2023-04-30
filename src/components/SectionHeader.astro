@@ -7,10 +7,10 @@ const { title, subTitle } = Astro.props as Props;
 ---
 
 <div
-  class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+  class="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20"
 >
   <div class="max-w-screen-lg text-brand md:mx-auto">
-    <h2 class="mb-6 text-3xl md:text-9xl md:mx-auto capitalize">{title}</h2>
+    <h2 class="mb-6 text-3xl capitalize md:mx-auto md:text-9xl">{title}</h2>
     <p class="text-base tracking-tight md:text-xl">
       {subTitle}
     </p>

@@ -3,22 +3,22 @@ import Icon from "astro-icon";
 ---
 
 <section
-    class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+  class="mx-auto px-4 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8"
 >
-    <header class="relative flex flex-col min-h-screen justify-evenly">
-        <div class="drop-shadow-text-sm lg:drop-shadow-text-lg">
-            <p class="mb-2 text-2xl tracking-wide text-brand">Hi, my name is</p>
-            <h1 class="text-5xl font-bold tracking-wide text-brand">
-                Admir Gorenca<br />
-                <span class="text-5xl"> I build digital things.</span>
-            </h1>
-        </div>
-        <a
-            href="#features"
-            class="flex items-center px-8 py-3 mr-auto space-x-1 font-medium normal-case transition duration-300 ease-out border-2 text-brand border-brand hover:bg-brand/10"
-        >
-            <span class="tracking-wide">Check out my work!</span>
-            <Icon name="mdi:menu-down" class="w-5 h-5" />
-        </a>
-    </header>
+  <header class="relative flex min-h-screen flex-col justify-evenly">
+    <div class="drop-shadow-text-sm lg:drop-shadow-text-lg">
+      <p class="mb-2 text-2xl tracking-wide text-brand">Hi, my name is</p>
+      <h1 class="text-5xl font-bold tracking-wide text-brand">
+        Admir Gorenca<br />
+        <span class="text-5xl"> I build digital things.</span>
+      </h1>
+    </div>
+    <a
+      href="#features"
+      class="mr-auto flex items-center space-x-1 border-2 border-brand px-8 py-3 font-medium normal-case text-brand transition duration-300 ease-out hover:bg-brand/10"
+    >
+      <span class="tracking-wide">Check out my work!</span>
+      <Icon name="mdi:menu-down" class="h-5 w-5" />
+    </a>
+  </header>
 </section>

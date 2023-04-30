@@ -1,0 +1,249 @@
+---
+import { Image } from "@astrojs/image/components";
+import fidahost from "~/assets/fidahost.png";
+import bl from "~/assets/immobilienag.png";
+import vfv from "~/assets/vfv.png";
+import vortex from "~/assets/vortexm.png";
+import vidict from "~/assets/vidict.png";
+import alpi from "~/assets/alpi.png";
+import usc from "~/assets/usc.png";
+import synopsis from "~/assets/synopsisads.png";
+import yourdomain from "~/assets/yourdomain.png";
+import hope from "~/assets/hope.png";
+import nentori from "~/assets/28nentori.png";
+import drFida from "~/assets/dr-fida.png";
+
+const projectDetails = [
+  {
+    heading: "Listing new Immobilien properties… FAST",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: bl,
+    webLink: "https://blimmobilien.netlify.app/",
+    brandColor: "text-[#D5A44E]",
+    responsability: [
+      {
+        title: "B&L Immobilien AG",
+        body: ["UX/UI Design", "Development"],
+      },
+    ],
+  },
+  {
+    heading: "FidaHost.com",
+    description: "best Hosting Solution",
+    imgSrc: fidahost,
+    webLink: "https://fh-vanilla.netlify.app/",
+    brandColor: "text-[#84C0FC] lg:mt-80",
+    responsability: [
+      {
+        title: "FidaHost",
+        body: ["Integrated UI Design", "Development"],
+      },
+    ],
+  },
+  {
+    heading: "Vortex m2",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: vortex,
+    webLink: "https://vortexm2.com/",
+    brandColor: "text-[#faaf42] lg:-mt-80",
+    responsability: [
+      {
+        title: "Vortex m2",
+        body: ["Partly Design", "Development", "Multilingual"],
+      },
+    ],
+  },
+  {
+    heading: "Klinika VFV",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: vfv,
+    webLink: "https://vfvclinic.mk/",
+    brandColor: "text-[#ABD042] ",
+    responsability: [
+      {
+        title: "Klinika VFV",
+        body: ["Development", "Multilingual"],
+      },
+    ],
+  },
+  {
+    heading: "Vidict",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: vidict,
+    webLink: "https://vidict.net/",
+    brandColor: "text-[#002FFF] lg:-mt-80",
+    responsability: [
+      {
+        title: "Vidict",
+        body: ["Partly Design", "Development"],
+      },
+    ],
+  },
+  {
+    heading: "Alpi Royal",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: alpi,
+    webLink: "https://alpiroyal.ch/",
+    brandColor: "text-[#FFC757] ",
+    responsability: [
+      {
+        title: "Alpi Royal",
+        body: ["UI Design", "Development", "E-commerce"],
+      },
+    ],
+  },
+  {
+    heading: "Synopsis ADS",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: synopsis,
+    webLink: "https://synopsisads.netlify.app/dark-v02/",
+    brandColor: "text-[#DD0000] lg:-mt-80",
+    responsability: [
+      {
+        title: "Synopsis ADS",
+        body: ["UI Design", "Development"],
+      },
+    ],
+  },
+  {
+    heading: "Uscabling",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: usc,
+    webLink: "https://uscabling.netlify.app/",
+    brandColor: "text-[#1B91BF] ",
+    responsability: [
+      {
+        title: "Uscabling",
+        body: ["UI Design", "Development"],
+      },
+    ],
+  },
+  {
+    heading: "Yourdomain",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: yourdomain,
+    webLink: "https://yourdomainv0-4.netlify.app/",
+    brandColor: "text-[#BBAAE0] lg:-mt-80",
+    responsability: [
+      {
+        title: "Yourdomain",
+        body: ["Development"],
+      },
+    ],
+  },
+  {
+    heading: "Hope",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: hope,
+    webLink: "https://hope-fsxproject.netlify.app/",
+    brandColor: "text-[#fc7d0d] ",
+    responsability: [
+      {
+        title: "Hope",
+        body: ["UI Design", "Development"],
+      },
+    ],
+  },
+  {
+    heading: "Listing new Immobilien properties… FAST",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: nentori,
+    webLink: "https://28nentori.netlify.app/",
+    brandColor: "text-brand lg:-mt-80",
+    responsability: [
+      {
+        title: "28 Nentori",
+        body: ["UX/UI Design", "Development", "Multilingual"],
+      },
+    ],
+  },
+  {
+    heading: "Listing new Immobilien properties… FAST",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+    imgSrc: drFida,
+    webLink: "https://dr-fida.netlify.app/",
+    brandColor: "text-[#F25C84] ",
+    responsability: [
+      {
+        title: "Dr. Fida",
+        body: ["UI Design", "Development"],
+      },
+    ],
+  },
+];
+---
+
+<section>
+  <div
+    class="
+grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-32
+    mx-auto px-4 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8"
+  >
+    {
+      projectDetails.map(({ imgSrc, responsability, webLink, brandColor }) => (
+        <div class={`  group relative aspect-square max-w-screen-lg space-y-10 opacity-90 transition-transform   ease-out  ${brandColor}`}>
+          <a target="_blank" href={webLink}>
+            <Image
+              alt=""
+              src={imgSrc}
+              class="h-[400px]  w-full    object-cover object-top  shadow-lg"
+              format="avif"
+            />
+          </a>
+          <div class={` items-start  gap-8  `}>
+            <div class="flex  h-full  justify-between ">
+              <div class="">
+                {responsability.map(({ title, body }) => (
+                  <div class="  space-y-8">
+                    <div class=" flex flex-col justify-center ">
+                      <h6 class='   text-base  capitalize'>
+                        {title}
+                      </h6>
+
+                      {body.map((p) => (
+                        <p class="text-white/60">{p} </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div class="">
+                <span class="  relative block ">
+                  <span class="absolute -inset-0.5    bg-gradient-to-tl from-blue-700 via-red-700 to-yellow-500 opacity-0 blur filter transition duration-700 group-hover:opacity-75  group-hover:duration-200" />
+                  <a
+                    target="_blank"
+                    href={webLink}
+                    class="   relative inline-flex items-center rounded-sm   border-white bg-[#15202C] px-8  py-4 text-xs font-semibold uppercase tracking-wider text-white transition  duration-700 group-hover:bg-bkg   group-hover:duration-200  "
+                  >
+                    <span class="tracking-wide">Visit</span>
+                    <svg
+                      class="ml-4 h-[14px] w-[14px] fill-current  transition-transform ease-in-out group-hover:translate-x-1"
+                      viewBox="0 0 320 512"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M320 120v240c0 13.25-10.75 24-24 24s-24-10.75-24-24V177.9l-231 231C36.28 413.7 30.14 416 24 416s-12.28-2.344-16.97-7.031c-9.375-9.375-9.375-24.56 0-33.94L238.1 144H56C42.75 144 32 133.3 32 120S42.75 96 56 96h240C309.3 96 320 106.8 320 120z" />
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,15 @@
+---
+import LayoutWithHeader from "~/layouts/LayoutWithHeader.astro";
+import { NAME, SITE_DESCRIPTION } from "~/config/config";
+import SectionHeader from "~/components/SectionHeader.astro";
+import ClientProductItem from "~/components/ClientProductItem.astro";
+
+const secTitle = "my work";
+const secSubTitle =
+  "Recent examples of the impact of my design/development work.";
+---
+
+<LayoutWithHeader description={SITE_DESCRIPTION} title={NAME}>
+  <SectionHeader title={secTitle} subTitle={secSubTitle} />
+  <ClientProductItem />
+</LayoutWithHeader>
