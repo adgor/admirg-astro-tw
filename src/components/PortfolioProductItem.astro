@@ -1,21 +1,22 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Icon from "astro-icon";
-import bl from "~/assets/blimmobilien.png";
+import fh from "~/assets/fidahost.png";
 import nentori from "~/assets/28nentori.png";
 import drFida from "~/assets/dr-fida.png";
 
 const projectDetails = [
   {
-    heading: "Listing new Immobilien properties… FAST",
+    heading: "Best Hosting Solution  ",
     description:
       " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
-    imgSrc: bl,
-    webLink: "https://blimmobilien.netlify.app/",
-    brandColor: "text-[#D5A44E]",
+    imgSrc: fh,
+    webLink: "https://fh-vanilla.netlify.app/",
+    brandColor: "text-[#84C0FC]",
     responsability: [
       {
         title: "project",
-        body: ["Immobilien Website"],
+        body: ["Hosting Website"],
       },
       //   {
       //     title: "performance",
@@ -23,7 +24,7 @@ const projectDetails = [
       //   },
       {
         title: "scope",
-        body: ["UX/UI Design", "Development"],
+        body: ["Integrated UI Design", "Development"],
       },
       // {
       //   title: "technologies",
@@ -32,7 +33,7 @@ const projectDetails = [
     ],
   },
   {
-    heading: "Listing new Immobilien properties… FAST",
+    heading: "First High School in City",
     description:
       " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
     imgSrc: nentori,
@@ -58,7 +59,7 @@ const projectDetails = [
     ],
   },
   {
-    heading: "Listing new Immobilien properties… FAST",
+    heading: "Best Gynecological and Obstetric Office in City",
     description:
       " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
     imgSrc: drFida,
@@ -102,10 +103,10 @@ const projectDetails = [
         }) => (
           <div class="mx-auto max-w-screen-lg border-t border-white/10 py-16 lg:py-20">
             <div class="mb-10 sm:text-center md:mx-auto md:mb-12">
-              <img
-                class="col-span-2 h-96 w-full rounded object-cover object-top shadow-lg lg:h-[564px]"
+              <Image
+                alt="product image"
                 src={imgSrc}
-                alt=""
+                class="col-span-2 h-96 w-full rounded object-cover object-top shadow-lg lg:h-[564px]  "
               />
             </div>
             <div
