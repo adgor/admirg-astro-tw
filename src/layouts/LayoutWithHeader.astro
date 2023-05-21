@@ -45,10 +45,14 @@ const { title, description } = Astro.props as Props;
         z-index: 3;
       }
     </style>
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWLHTR7G08"
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-NWLHTR7G08"
     ></script>
-    <script>
+
+    <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
