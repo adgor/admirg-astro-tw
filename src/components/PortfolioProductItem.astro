@@ -2,6 +2,9 @@
 import { Image } from "@astrojs/image/components";
 import Icon from "astro-icon";
 import fh from "~/assets/fidahost.png";
+import bl from "~/assets/immobilienag.png";
+import allnet from "~/assets/allnet.png";
+import yourdomain from "~/assets/yourdomain.png";
 import nentori from "~/assets/28nentori.png";
 import drFida from "~/assets/dr-fida.png";
 
@@ -9,7 +12,7 @@ const projectDetails = [
   {
     heading: "Best Hosting Solution  ",
     description:
-      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+      "",
     imgSrc: fh,
     webLink: "https://fh-vanilla.netlify.app/",
     brandColor: "text-[#84C0FC]",
@@ -33,9 +36,87 @@ const projectDetails = [
     ],
   },
   {
+    heading: "Your Perfect Home",
+    description:
+      "",
+    imgSrc: bl,
+    webLink: "https://blimmobilien.netlify.app/",
+    brandColor: "text-[#D5A44E]",
+    responsability: [
+      {
+        title: "project",
+        body: ["Real Estate"],
+      },
+      //   {
+      //     title: "performance",
+      //     body: ["Responsive", "100% Score"],
+      //   },
+      {
+        title: "scope",
+        body: ["UX/UI Design", "Development"],
+      },
+      // {
+      //   title: "technologies",
+      //   body: ["Gatsby", "React i18next", "Tailwind CSS", "Netlify"],
+      // },
+    ],
+  },
+  {
+    heading: "Your Full IT Service",
+    description:
+      "",
+    imgSrc: allnet,
+    webLink: "https://allnettechnology.netlify.app/",
+    brandColor: "text-[#1B91BF] ",
+    responsability: [
+      {
+        title: "project",
+        body: ["ALLNET Technology"],
+      },
+      //   {
+      //     title: "performance",
+      //     body: ["Responsive", "100% Score"],
+      //   },
+      {
+        title: "scope",
+        body: ["UX/UI Design", "Development"],
+      },
+      // {
+      //   title: "technologies",
+      //   body: ["Gatsby", "React i18next", "Tailwind CSS", "Netlify"],
+      // },
+    ],
+  },
+  {
+    heading: "All Domain names",
+    description:
+      "",
+    imgSrc: yourdomain,
+    webLink: "https://yourdomainv0-4.netlify.app/",
+    brandColor: "text-[#BBAAE0]",
+    responsability: [
+      {
+        title: "project",
+        body: ["Yourdomain"],
+      },
+      //   {
+      //     title: "performance",
+      //     body: ["Responsive", "100% Score"],
+      //   },
+      {
+        title: "scope",
+        body: [ "Development"],
+      },
+      // {
+      //   title: "technologies",
+      //   body: ["Gatsby", "React i18next", "Tailwind CSS", "Netlify"],
+      // },
+    ],
+  },
+  {
     heading: "First High School in City",
     description:
-      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+      "",
     imgSrc: nentori,
     webLink: "https://28nentori.netlify.app/",
     brandColor: "text-brand",
@@ -58,32 +139,32 @@ const projectDetails = [
       // },
     ],
   },
-  {
-    heading: "Best Gynecological and Obstetric Office in City",
-    description:
-      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
-    imgSrc: drFida,
-    webLink: "https://dr-fida.netlify.app/",
-    brandColor: "text-[#F25C84]",
-    responsability: [
-      {
-        title: "project",
-        body: ["Medical Office Website"],
-      },
-      //   {
-      //     title: "performance",
-      //     body: ["Responsive", "100% Score"],
-      //   },
-      {
-        title: "scope",
-        body: ["UX/UI Design", "Development"],
-      },
-      // {
-      //   title: "technologies",
-      //   body: ["HTML", "Tailwind CSS", "Netlify"],
-      // },
-    ],
-  },
+  // {
+  //   heading: "Best Gynecological and Obstetric Office in City",
+  //   description:
+  //     " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.",
+  //   imgSrc: drFida,
+  //   webLink: "https://dr-fida.netlify.app/",
+  //   brandColor: "text-[#F25C84]",
+  //   responsability: [
+  //     {
+  //       title: "project",
+  //       body: ["Medical Office Website"],
+  //     },
+  //     //   {
+  //     //     title: "performance",
+  //     //     body: ["Responsive", "100% Score"],
+  //     //   },
+  //     {
+  //       title: "scope",
+  //       body: ["UX/UI Design", "Development"],
+  //     },
+  //     // {
+  //     //   title: "technologies",
+  //     //   body: ["HTML", "Tailwind CSS", "Netlify"],
+  //     // },
+  //   ],
+  // },
 ];
 ---
 
@@ -112,14 +193,14 @@ const projectDetails = [
             <div
               class={`grid max-w-screen-lg items-start gap-8 sm:mx-auto lg:grid-cols-3 ${brandColor}`}
             >
-              <div class=" col-span-2 grid grid-cols-3 gap-4 gap-y-0 lg:col-span-1 lg:grid-cols-1 lg:pr-16">
+              <div class=" col-span-2 grid grid-cols-2 gap-4 gap-y-0 lg:col-span-1 lg:grid-cols-1 lg:pr-16">
                 {responsability.map(({ title, body }) => (
                   <div class="  space-y-8">
                     <div class="mb-5 flex flex-col justify-center border-t border-white/10">
                       <h6 class="mb-2   pt-3 text-base  capitalize">{title}</h6>
 
                       {body.map((p) => (
-                        <p>{p} </p>
+                        <p class='  text-white/60 '>{p} </p>
                       ))}
                     </div>
                   </div>
@@ -132,11 +213,11 @@ const projectDetails = [
                   </h2>
                   <p class="text-base md:text-lg">{description}</p>
                 </div>
-                <div class="mt-6">
+                <div class=" mb-6 ">
                   <a
                     target="_blank"
                     href={webLink}
-                    class="inline-flex items-center rounded-sm border-2 border-white px-8 py-4  text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-700 hover:bg-white/10 "
+                    class="inline-flex  items-center rounded-sm border-2 border-white px-8 py-4  text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-700 hover:bg-white/10 "
                   >
                     <span class="tracking-wide">see demo</span>
                     <Icon name="mdi:menu-right" class="h-5 w-5" />
